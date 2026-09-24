@@ -1,0 +1,3502 @@
+[
+  {
+    "id": 1,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the pdf of the exponential distribution?",
+    "back": "f(x) = (1÷theta) × exp(-x÷theta) for x > 0, where theta is the scale parameter and also equals the mean."
+  },
+  {
+    "id": 2,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What does the memoryless property of the exponential distribution mean?",
+    "back": "Given a loss has already exceeded d, the distribution of the excess over d is exponential with the same parameter theta. Past survival gives no information about the future."
+  },
+  {
+    "id": 3,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the hazard rate of the exponential distribution?",
+    "back": "A constant, h(x) = 1÷theta for all x. This constant hazard rate is what produces the memoryless property."
+  },
+  {
+    "id": 4,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the mean excess function e(d) for the exponential distribution?",
+    "back": "e(d) = theta for every d, a direct consequence of the memoryless property."
+  },
+  {
+    "id": 5,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is a scale parameter?",
+    "back": "A parameter that stretches or compresses a distribution along the x-axis without changing its shape; multiplying a random variable by a constant c multiplies its scale parameter by c."
+  },
+  {
+    "id": 6,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is a shape parameter?",
+    "back": "A parameter that controls the qualitative form of the distribution, such as skewness and tail weight, rather than just stretching it. Changing it changes the distribution's behavior, not just its scale."
+  },
+  {
+    "id": 7,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Why does scale invariance matter for trending losses?",
+    "back": "Because trending or inflating losses by a constant factor simply multiplies the scale parameter by that factor, leaving the shape parameter unchanged, which makes adjusting severity distributions for inflation straightforward."
+  },
+  {
+    "id": 8,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Give the survival function of the single-parameter Pareto distribution.",
+    "back": "S(x) = (theta÷x)ᵃˡᵖʰᵃ for x ≥ theta, where alpha is the shape parameter and theta is a fixed lower threshold."
+  },
+  {
+    "id": 9,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Give the pdf of the two-parameter Pareto (Pareto Type II) distribution.",
+    "back": "f(x) = (alpha × thetaᵃˡᵖʰᵃ) ÷ (x + theta)^(alpha+1) for x > 0, with theta as the scale parameter and alpha as the shape parameter."
+  },
+  {
+    "id": 10,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the mean of the two-parameter Pareto distribution, and when does it exist?",
+    "back": "E[X] = theta÷(alpha-1), which exists only when alpha > 1. For alpha ≤ 1 the mean is infinite or undefined."
+  },
+  {
+    "id": 11,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "When does the variance of the two-parameter Pareto exist?",
+    "back": "Only when alpha > 2. As alpha decreases toward 1, the tail becomes heavier and even the mean can fail to exist."
+  },
+  {
+    "id": 12,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the mean excess function of the two-parameter Pareto?",
+    "back": "e(d) = (theta+d)÷(alpha-1), which is increasing in d, a hallmark of heavy-tailed behavior."
+  },
+  {
+    "id": 13,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Why is an increasing mean excess function significant?",
+    "back": "It signals a heavy-tailed distribution: the more a loss has already exceeded a threshold, the larger the expected further excess becomes, unlike light-tailed distributions where mean excess is flat or decreasing."
+  },
+  {
+    "id": 14,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "How does the tail of the two-parameter Pareto compare to the exponential?",
+    "back": "The Pareto's tail decays polynomially (like a constant over xᵃˡᵖʰᵃ), which is heavier than the exponential's exponential decay, making large claims relatively more likely under the Pareto."
+  },
+  {
+    "id": 15,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Why is the Pareto distribution favored for excess and reinsurance layers?",
+    "back": "Because its heavy polynomial tail better reflects the real possibility of very large claims, which are exactly what drive the loss cost of a high excess layer."
+  },
+  {
+    "id": 16,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Give the pdf of the lognormal distribution.",
+    "back": "f(x) = 1÷(x×sigma×√(2×π)) × exp(-(ln(x)-mu)²÷(2×sigma²)) for x > 0, where ln(X) is normal with mean mu and standard deviation sigma."
+  },
+  {
+    "id": 17,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is E[X] for a lognormal distribution with parameters mu and sigma?",
+    "back": "E[X] = exp(mu + sigma²÷2)."
+  },
+  {
+    "id": 18,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Which parameter of the lognormal controls tail weight and skewness?",
+    "back": "Sigma, the standard deviation of ln(X). Larger sigma produces a more heavily skewed distribution with a heavier right tail."
+  },
+  {
+    "id": 19,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "How does the lognormal's tail compare to the Pareto's?",
+    "back": "The lognormal's tail is lighter than the Pareto's; all moments of the lognormal exist, whereas Pareto moments can fail to exist for small alpha."
+  },
+  {
+    "id": 20,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "How do you compute P(X ≤ x) for a lognormal random variable?",
+    "back": "P(X ≤ x) = Phi((ln(x)-mu)÷sigma), using the standard normal cdf Phi, since ln(X) is normally distributed."
+  },
+  {
+    "id": 21,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Give the pdf of the gamma distribution.",
+    "back": "f(x) = (x^(alpha-1) × exp(-x÷theta)) ÷ (thetaᵃˡᵖʰᵃ × Gamma(alpha)) for x > 0, with shape parameter alpha and scale parameter theta."
+  },
+  {
+    "id": 22,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What are the mean and variance of the gamma distribution?",
+    "back": "Mean = alpha×theta, Variance = alpha×theta²."
+  },
+  {
+    "id": 23,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What happens to the gamma distribution when alpha = 1?",
+    "back": "It reduces exactly to the exponential distribution with parameter theta."
+  },
+  {
+    "id": 24,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "How does the gamma density behave near x = 0 when alpha > 1, compared to the exponential?",
+    "back": "Unlike the exponential (always decreasing from x = 0), the gamma density starts at 0 when alpha > 1 and rises to a peak before decreasing."
+  },
+  {
+    "id": 25,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Is the gamma distribution heavy-tailed or light-tailed?",
+    "back": "Light-to-moderate tailed. Its tail decays exponentially, unlike the polynomial tail decay of the Pareto."
+  },
+  {
+    "id": 26,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Give the cdf of the Weibull distribution.",
+    "back": "F(x) = 1 - exp(-(x÷theta)ᵗᵃᵘ) for x > 0, with shape parameter tau and scale parameter theta."
+  },
+  {
+    "id": 27,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What happens to the Weibull distribution when tau = 1?",
+    "back": "It reduces to the exponential distribution with parameter theta."
+  },
+  {
+    "id": 28,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "How does the Weibull's tail and hazard rate behave when tau < 1?",
+    "back": "The tail is heavier than exponential and the hazard rate is decreasing in x."
+  },
+  {
+    "id": 29,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "How does the Weibull's tail and hazard rate behave when tau > 1?",
+    "back": "The tail is lighter than exponential and the hazard rate is increasing in x."
+  },
+  {
+    "id": 30,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Why are the gamma and Weibull distributions useful for hypothesis testing against the exponential?",
+    "back": "Both nest the exponential as a special case (alpha = 1 or tau = 1), so a likelihood ratio test can check whether the added shape flexibility is actually needed."
+  },
+  {
+    "id": 31,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is a finite mixture distribution?",
+    "back": "A distribution formed by combining two or more component densities with mixing weights that sum to 1, e.g. f(x) = p×f1(x) + (1-p)×f2(x)."
+  },
+  {
+    "id": 32,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "How is the mean of a two-component mixture computed?",
+    "back": "E[X] = p×E[X1] + (1-p)×E[X2], a simple weighted average of the component means."
+  },
+  {
+    "id": 33,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Is the variance of a mixture equal to the weighted average of the component variances?",
+    "back": "No. It equals the weighted average of the component second moments minus the square of the mixture mean, which adds an extra between-component variance term whenever the component means differ."
+  },
+  {
+    "id": 34,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What law explains why mixture variance exceeds the weighted average of component variances?",
+    "back": "The law of total variance: Var(X) = E[Var(X|component)] + Var(E[X|component]). The second term adds dispersion whenever component means differ."
+  },
+  {
+    "id": 35,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Why might an actuary use a mixture of an exponential and a Pareto?",
+    "back": "To capture two distinct claim types in one model: the exponential for many small, routine claims and the Pareto for a smaller share of severe, heavy-tailed claims."
+  },
+  {
+    "id": 36,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the coefficient of variation (CV)?",
+    "back": "CV = standard deviation ÷ mean. It measures relative dispersion and allows comparison of variability across distributions with different means."
+  },
+  {
+    "id": 37,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the CV of the exponential distribution?",
+    "back": "Exactly 1, regardless of theta, since the standard deviation always equals the mean."
+  },
+  {
+    "id": 38,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What does a CV greater than 1 generally indicate?",
+    "back": "A heavier tail than the exponential distribution; CV less than 1 generally indicates a lighter, more concentrated tail."
+  },
+  {
+    "id": 39,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Define the limited expected value function E[X ∧ d].",
+    "back": "The expected value of a loss capped at d: E[X ∧ d] = integral from 0 to d of S(x) dx. It equals the expected payment under a policy limit of d."
+  },
+  {
+    "id": 40,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What happens to E[X ∧ d] as d approaches ∞?",
+    "back": "It approaches E[X], the unconditional mean, assuming the mean exists."
+  },
+  {
+    "id": 41,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Give the closed-form limited expected value for the two-parameter Pareto.",
+    "back": "E[X ∧ d] = (theta÷(alpha-1)) × [1 - (theta÷(theta+d))^(alpha-1)]."
+  },
+  {
+    "id": 42,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Define the mean excess (mean residual life) function e(d).",
+    "back": "e(d) = E[X - d | X > d], the expected amount by which a loss exceeds d, given it has already exceeded d. It represents the average claim size in an excess layer attaching at d."
+  },
+  {
+    "id": 43,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Define the hazard rate function h(x).",
+    "back": "h(x) = f(x)÷S(x), the instantaneous rate at which losses of size x terminate given they have survived to x."
+  },
+  {
+    "id": 44,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What does a decreasing hazard rate imply about tail weight?",
+    "back": "A decreasing hazard rate corresponds to a heavier tail than the exponential, since large losses become relatively more likely, not less, as x grows."
+  },
+  {
+    "id": 45,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What does an increasing hazard rate imply about tail weight?",
+    "back": "An increasing hazard rate corresponds to a lighter tail than exponential, since large losses become relatively less likely as x grows."
+  },
+  {
+    "id": 46,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Write the general log-likelihood for complete (uncensored, untruncated) loss data.",
+    "back": "l(theta) = sum over i of ln(f(xi; theta)), the sum of the log-density evaluated at each observed loss."
+  },
+  {
+    "id": 47,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is censored data in a P&C loss context?",
+    "back": "Data where a loss is known only to be at least a certain value, most commonly because a policy limit caps the recorded loss at u even though the true loss may have been larger."
+  },
+  {
+    "id": 48,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the likelihood contribution of a right-censored observation at u?",
+    "back": "S(u; theta), the survival probability at u, not the density f(u; theta), since all that is known is the true loss exceeded u."
+  },
+  {
+    "id": 49,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is truncated data in a P&C loss context?",
+    "back": "Data where losses below a threshold (e.g. a deductible d) are never recorded at all, so the observed sample only contains losses conditional on exceeding d."
+  },
+  {
+    "id": 50,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the likelihood contribution of an observation left-truncated at d?",
+    "back": "f(xi; theta) ÷ S(d; theta), the density divided by the probability of exceeding the truncation point, since the observation is drawn from the conditional distribution given X > d."
+  },
+  {
+    "id": 51,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What happens if you fit an unconditional density to truncated data without adjusting for truncation?",
+    "back": "The fit is systematically biased: it typically underestimates the mean and overstates how small claims tend to be, because the entire lower tail below the deductible is missing from the sample."
+  },
+  {
+    "id": 52,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Write the log-likelihood term for an observation that is both left-truncated at d and censored at limit u.",
+    "back": "ln(S(u; theta) ÷ S(d; theta)), combining the truncation adjustment (dividing by S(d)) with the censoring adjustment (using the survival probability at u instead of the density)."
+  },
+  {
+    "id": 53,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "For an exponential distribution fit by MLE to complete data, what is theta_hat?",
+    "back": "theta_hat equals the sample mean of the observed losses, since setting the derivative of the log-likelihood to zero gives theta_hat = sum(xi)÷n."
+  },
+  {
+    "id": 54,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Five claims of 200, 350, 500, 150, 800 are observed in full. What is the MLE of theta for an exponential fit?",
+    "back": "theta_hat = sample mean = 2,000÷5 = 400."
+  },
+  {
+    "id": 55,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is the method of moments estimation approach?",
+    "back": "Set the theoretical moments of a distribution (mean, variance, etc.) equal to the corresponding sample moments and solve the resulting equations for the parameters."
+  },
+  {
+    "id": 56,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "For a gamma distribution, what two equations does method of moments solve?",
+    "back": "alpha×theta = sample mean and alpha×theta² = sample variance, solved simultaneously for alpha_hat and theta_hat."
+  },
+  {
+    "id": 57,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "What is a key disadvantage of method of moments compared to MLE?",
+    "back": "It generally produces less efficient estimators (higher variance) and does not naturally handle censored or truncated data the way the likelihood framework does."
+  },
+  {
+    "id": 58,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Why is MLE preferred over method of moments in P&C severity modeling?",
+    "back": "MLE is generally more efficient and its likelihood framework naturally adjusts for censored and truncated data, both very common in real loss data, whereas method of moments does not."
+  },
+  {
+    "id": 59,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Losses follow a two-parameter Pareto with alpha = 3, theta = 1,000. What is E[X ∧ 2000]?",
+    "back": "E[X ∧ 2000] = 500 × [1 - (1000÷3000)²] = 500 × (8÷9) = 444.44."
+  },
+  {
+    "id": 60,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "In the Pareto example with alpha = 3, theta = 1,000, how much expected loss does a $2,000 policy limit remove compared to the unlimited mean?",
+    "back": "The unlimited mean is theta÷(alpha-1) = 500. With the limit, E[X ∧ 2000] = 444.44, so the limit removes 55.56 of expected loss per claim."
+  },
+  {
+    "id": 61,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Why is a heavy tail dangerous to underestimate in ratemaking?",
+    "back": "Using too light a distribution underprices excess layers and leaves reserves inadequate for large claims, since the model understates how likely extreme losses really are."
+  },
+  {
+    "id": 62,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Which distributions in this chapter nest the exponential as a special case?",
+    "back": "The gamma (at alpha = 1) and the Weibull (at tau = 1) both reduce exactly to the exponential distribution."
+  },
+  {
+    "id": 63,
+    "domain": "probability_models",
+    "chapter": "Parametric Loss Distributions and Severity Models",
+    "front": "Rank the exponential, gamma, lognormal, and two-parameter Pareto roughly from lightest to heaviest tail.",
+    "back": "Exponential and gamma are light-to-moderate tailed (exponential decay), the lognormal is moderately heavy-tailed (all moments exist), and the two-parameter Pareto is the heaviest tailed (polynomial decay, moments can fail to exist)."
+  },
+  {
+    "id": 64,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the pmf of a Poisson distribution with parameter lambda?",
+    "back": "P(N=k) = exp(-lambda) × lambdaᵏ ÷ k!, for k = 0, 1, 2, ..."
+  },
+  {
+    "id": 65,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What are the mean and variance of a Poisson distribution with parameter lambda?",
+    "back": "Both equal lambda: E[N] = lambda and Var(N) = lambda. This is called equidispersion."
+  },
+  {
+    "id": 66,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "If N1 ~ Poisson(lambda1) and N2 ~ Poisson(lambda2) are independent, what is the distribution of N1+N2?",
+    "back": "N1+N2 ~ Poisson(lambda1+lambda2). The Poisson family is closed under independent summation."
+  },
+  {
+    "id": 67,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the probability generating function of a Poisson(lambda) random variable?",
+    "back": "P(z) = E[zᴺ] = exp(lambda(z-1))"
+  },
+  {
+    "id": 68,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the pmf of a binomial distribution with parameters m and q?",
+    "back": "P(N=k) = C(m,k) × qᵏ × (1-q)^(m-k), for k = 0, 1, ..., m"
+  },
+  {
+    "id": 69,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What are the mean and variance of a binomial distribution with parameters m and q?",
+    "back": "E[N] = mq and Var(N) = mq(1-q). Since 1-q < 1, Var(N) is always less than E[N] (underdispersion)."
+  },
+  {
+    "id": 70,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "When is the binomial distribution the natural choice for a frequency model?",
+    "back": "When there is a hard, fixed upper bound m on the number of possible claims, such as the number of lives insured in a group policy."
+  },
+  {
+    "id": 71,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the pmf of a negative binomial distribution with parameters r and beta?",
+    "back": "P(N=k) = C(k+r-1, k) × (1÷(1+beta))ʳ × (beta÷(1+beta))ᵏ, for k = 0, 1, 2, ..."
+  },
+  {
+    "id": 72,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What are the mean and variance of a negative binomial distribution with parameters r and beta?",
+    "back": "E[N] = r×beta and Var(N) = r×beta×(1+beta). Since 1+beta > 1, Var(N) always exceeds E[N] (overdispersion)."
+  },
+  {
+    "id": 73,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "Why is the negative binomial distribution often preferred over the Poisson distribution for real claim count data?",
+    "back": "Real claim data usually shows variance greater than the mean (overdispersion), which the Poisson distribution's equidispersion property cannot capture, but the negative binomial can."
+  },
+  {
+    "id": 74,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "How can the negative binomial distribution be derived as a mixture?",
+    "back": "As a Poisson-gamma mixture: if lambda is gamma-distributed with shape r and scale beta, and N|lambda is Poisson(lambda), then the unconditional distribution of N is negative binomial(r, beta)."
+  },
+  {
+    "id": 75,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What does overdispersion mean for a claim count variable?",
+    "back": "Overdispersion means the observed variance of the claim count exceeds its observed mean, violating the Poisson equidispersion assumption."
+  },
+  {
+    "id": 76,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "Name two common causes of overdispersion in real claims data.",
+    "back": "Unobserved heterogeneity across policyholders (rating variables do not capture every risk difference) and contagion (one claim event makes related claim events more likely)."
+  },
+  {
+    "id": 77,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the (a,b,0) class recursion?",
+    "back": "p_k ÷ p_(k-1) = a + b÷k, for k = 1, 2, 3, ..., where p_k = P(N=k)."
+  },
+  {
+    "id": 78,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "Which three distributions make up the (a,b,0) class?",
+    "back": "Poisson, binomial, and negative binomial."
+  },
+  {
+    "id": 79,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What are a and b for the Poisson(lambda) distribution in the (a,b,0) class?",
+    "back": "a = 0, b = lambda, with p_0 = exp(-lambda)."
+  },
+  {
+    "id": 80,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What are a and b for the binomial(m,q) distribution in the (a,b,0) class?",
+    "back": "a = -q÷(1-q), b = (m+1)q÷(1-q), with p_0 = (1-q)ᵐ."
+  },
+  {
+    "id": 81,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What are a and b for the negative binomial(r,beta) distribution in the (a,b,0) class?",
+    "back": "a = beta÷(1+beta), b = (r-1)×beta÷(1+beta), with p_0 = (1+beta)^(-r)."
+  },
+  {
+    "id": 82,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "How can you quickly tell which (a,b,0) distribution you have just from the sign of a?",
+    "back": "a = 0 means Poisson. a negative means binomial. a positive means negative binomial."
+  },
+  {
+    "id": 83,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the (a,b,1) class and how does it differ from (a,b,0)?",
+    "back": "The (a,b,1) class uses the same recursion p_k÷p_(k-1) = a + b÷k starting at k=1 or later, but allows p_0 to be set independently of the base formula, used for zero-modified and zero-truncated distributions."
+  },
+  {
+    "id": 84,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "In the collective risk model, how is the aggregate loss S defined?",
+    "back": "S = X_1 + X_2 + ... + X_N, where N is a frequency random variable and X_1, X_2, ..., X_N are iid severity random variables independent of N."
+  },
+  {
+    "id": 85,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What are the two key structural assumptions of the collective risk model?",
+    "back": "The severities X_i are independent and identically distributed, and the X_i are independent of the frequency N."
+  },
+  {
+    "id": 86,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is a compound distribution?",
+    "back": "The distribution of a random sum S = X_1 + ... + X_N under the collective risk model, written S ~ Compound(N, X)."
+  },
+  {
+    "id": 87,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "In the individual risk model, how is the aggregate loss S defined?",
+    "back": "S = Y_1 + Y_2 + ... + Y_n, where n is a fixed, known number of policies and each Y_i is the loss from policy i."
+  },
+  {
+    "id": 88,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "How does the individual risk model differ from the collective risk model in terms of the loss terms Y_i vs X_i?",
+    "back": "In the individual risk model the Y_i need not be identically distributed (different policies can differ), while in the collective risk model the X_i must be iid; also n is fixed in the individual model but N is random in the collective model."
+  },
+  {
+    "id": 89,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "When is the individual risk model more natural than the collective risk model?",
+    "back": "When modeling a known, finite set of distinguishable policies with different coverage limits and expected frequencies, such as a commercial property portfolio with 500 named insureds."
+  },
+  {
+    "id": 90,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the compound-variance formula for E[S]?",
+    "back": "E[S] = E[N] × E[X]"
+  },
+  {
+    "id": 91,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the compound-variance formula for Var(S)?",
+    "back": "Var(S) = E[N] × Var(X) + Var(N) × (E[X])²"
+  },
+  {
+    "id": 92,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "In the compound-variance formula, what does the term E[N]×Var(X) represent?",
+    "back": "The contribution to total variance from variability in individual claim sizes, scaled by the average number of claims."
+  },
+  {
+    "id": 93,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "In the compound-variance formula, what does the term Var(N)×(E[X])² represent?",
+    "back": "The contribution to total variance from variability in the number of claims, magnified by the square of the average claim size."
+  },
+  {
+    "id": 94,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "If N ~ Poisson(lambda=4) and X has mean 1,000 and variance 500,000, independent of N, what is E[S]?",
+    "back": "E[S] = E[N]×E[X] = 4 × 1,000 = 4,000"
+  },
+  {
+    "id": 95,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "If N ~ Poisson(lambda=4) and X has mean 1,000 and variance 500,000, independent of N, what is Var(S)?",
+    "back": "Var(S) = E[N]×Var(X) + Var(N)×(E[X])² = 4×500,000 + 4×1,000² = 2,000,000 + 4,000,000 = 6,000,000"
+  },
+  {
+    "id": 96,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "Why can frequency variability dominate total aggregate loss variance even when Var(N) looks small on its own?",
+    "back": "Because the Var(N) term in the compound-variance formula is multiplied by (E[X])², the square of the average claim size, which can be large even if Var(N) itself is modest."
+  },
+  {
+    "id": 97,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What condition must hold on the frequency distribution for Panjer's recursion to apply exactly?",
+    "back": "The frequency distribution must belong to the (a,b,0) class (Poisson, binomial, or negative binomial)."
+  },
+  {
+    "id": 98,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What condition must hold on the severity distribution for Panjer's recursion to apply?",
+    "back": "The severity distribution must be discretized onto a grid of possible claim sizes 0, h, 2h, 3h, ... with a fixed span h."
+  },
+  {
+    "id": 99,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is g_0 in Panjer's recursion?",
+    "back": "g_0 = P_N(f_0), the frequency distribution's probability generating function evaluated at f_0, the probability that severity equals zero."
+  },
+  {
+    "id": 100,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "For a Poisson(lambda) frequency, what does g_0 equal in Panjer's recursion?",
+    "back": "g_0 = exp(lambda(f_0 - 1))"
+  },
+  {
+    "id": 101,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the general form of Panjer's recursion for g_k when k ≥ 1?",
+    "back": "g_k = [1÷(1-a×f_0)] × sum_{j=1}^{k} (a + b×j÷k) × f_j × g_(k-j)"
+  },
+  {
+    "id": 102,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What computational advantage does Panjer's recursion have over direct convolution?",
+    "back": "It builds the aggregate distribution with a single forward pass at cost proportional to k², instead of computing an infinite mixture of n-fold convolutions weighted by P(N=n)."
+  },
+  {
+    "id": 103,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "In direct convolution (without Panjer's recursion), how would you compute the distribution of X1+X2+X3?",
+    "back": "By convolving the severity distribution with itself twice: first compute the 2-fold convolution for X1+X2, then convolve that result again with the severity distribution for the 3-fold convolution."
+  },
+  {
+    "id": 104,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "For Panjer's recursion with a Poisson frequency (a=0), what does the general recursion simplify to?",
+    "back": "g_k = b × sum_{j=1}^{k} (j÷k) × f_j × g_(k-j), since a=0 removes the constant term and the 1÷(1-a×f_0) factor becomes 1."
+  },
+  {
+    "id": 105,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "With N ~ Poisson(lambda=2) and f_0=0, f_1=0.6, f_2=0.3, f_3=0.1, what is g_0?",
+    "back": "g_0 = exp(2(0-1)) = exp(-2) = 0.1353"
+  },
+  {
+    "id": 106,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "With N ~ Poisson(lambda=2), b=2, f_1=0.6, and g_0=0.1353, what is g_1?",
+    "back": "g_1 = b×(1÷1)×f_1×g_0 = 2×1×0.6×0.1353 = 0.1624"
+  },
+  {
+    "id": 107,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "With b=2, f_1=0.6, f_2=0.3, g_0=0.1353, g_1=0.1624, what is g_2 using Panjer's recursion?",
+    "back": "g_2 = 2×[(0.5)(0.6)(0.1624) + (1)(0.3)(0.1353)] = 2×[0.04872+0.04059] = 2×0.08931 = 0.1786"
+  },
+  {
+    "id": 108,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is a discretized severity distribution and why is it needed for Panjer's recursion?",
+    "back": "It is the severity distribution rounded or mapped onto a fixed grid of values (0, h, 2h, ...), needed because Panjer's recursion is defined for discrete probability mass functions."
+  },
+  {
+    "id": 109,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is stop-loss insurance?",
+    "back": "A reinsurance arrangement that pays the excess of the aggregate loss S over a fixed retention d, so the reinsurer pays (S-d)_+ = max(S-d, 0)."
+  },
+  {
+    "id": 110,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the formula for the net stop-loss premium at retention d for a discrete aggregate distribution?",
+    "back": "E[(S-d)_+] = sum over s > d of (s-d) × P(S=s)"
+  },
+  {
+    "id": 111,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the survival-function form of the stop-loss premium formula?",
+    "back": "E[(S-d)_+] = integral from d to ∞ of [1 - F_S(x)] dx"
+  },
+  {
+    "id": 112,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "Why are Panjer's recursion and stop-loss premiums almost always tested together?",
+    "back": "Because the full aggregate distribution built through Panjer's recursion is typically the direct input needed to compute a stop-loss premium at any retention level."
+  },
+  {
+    "id": 113,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What does it mean for a retention d to be applied to an aggregate loss S in a stop-loss treaty?",
+    "back": "The reinsurer only pays the amount by which S exceeds d; if S is at or below d, the reinsurer pays nothing."
+  },
+  {
+    "id": 114,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "For a binomial(m,q) frequency, why is a always negative?",
+    "back": "Because a = -q÷(1-q), and since q and 1-q are both positive for 0<q<1, the ratio q÷(1-q) is positive, making a strictly negative."
+  },
+  {
+    "id": 115,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "Why does the negative binomial distribution always have b less than a when r < 1?",
+    "back": "Because b = (r-1)×beta÷(1+beta); when r<1, (r-1) is negative, making b negative while a = beta÷(1+beta) stays positive."
+  },
+  {
+    "id": 116,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What real-world consequence follows from underpricing overdispersion in a claim count model?",
+    "back": "Using a Poisson model when the true process is overdispersed understates the variability of aggregate losses, which can lead to underpriced tail risk in reinsurance or inadequate reserve margins."
+  },
+  {
+    "id": 117,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "In the Poisson-gamma mixture interpretation of the negative binomial, what does the gamma distribution represent?",
+    "back": "The gamma distribution represents uncertainty or heterogeneity in the true claim rate lambda across policyholders, before conditioning on a specific policyholder's Poisson claim process."
+  },
+  {
+    "id": 118,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What happens to the compound-variance formula if the frequency N is degenerate (always equal to a fixed constant n)?",
+    "back": "Var(N) = 0, so Var(S) reduces to just n×Var(X), since the frequency contributes no variability."
+  },
+  {
+    "id": 119,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "Why must the severity random variables X_i be independent of the frequency N in the collective risk model?",
+    "back": "So that the number of claims does not influence or correlate with the size of each individual claim, which keeps the compound-variance formula and Panjer's recursion valid."
+  },
+  {
+    "id": 120,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the practical effect of a fixed maximum m in a binomial frequency model on the aggregate loss distribution?",
+    "back": "It caps the maximum possible aggregate loss at m times the maximum possible severity, since no more than m claims can ever occur."
+  },
+  {
+    "id": 121,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "How would you verify from sample data whether to use a Poisson or negative binomial frequency model?",
+    "back": "Compare the sample mean and sample variance of claim counts; if the sample variance is noticeably larger than the sample mean, this indicates overdispersion and favors the negative binomial."
+  },
+  {
+    "id": 122,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "What is the relationship between p_1 and p_0 under the (a,b,0) recursion?",
+    "back": "p_1 = p_0 × (a + b), since the recursion p_k÷p_(k-1) = a + b÷k gives p_1÷p_0 = a + b÷1 = a+b."
+  },
+  {
+    "id": 123,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "Does Panjer's recursion require knowing the full frequency pmf in advance, or only a and b?",
+    "back": "Only a, b, and p_0 (equivalently g_0) are needed; the recursion generates every subsequent probability without needing the full frequency pmf listed out in advance."
+  },
+  {
+    "id": 124,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "Why is convolution of discrete severity distributions computationally expensive compared to Panjer's recursion?",
+    "back": "Direct convolution requires computing a separate n-fold convolution of the severity distribution for every possible value of N and then weighting and summing over all n, which grows rapidly in cost, while Panjer's recursion builds the result in a single efficient forward pass."
+  },
+  {
+    "id": 125,
+    "domain": "probability_models",
+    "chapter": "Frequency Models and Aggregate Loss Models",
+    "front": "If lambda increases for a Poisson frequency while severity stays fixed, what happens to both E[S] and Var(S)?",
+    "back": "Both E[S] = lambda×E[X] and the Var(N) term lambda×(E[X])² in Var(S) increase directly with lambda, so both the expected aggregate loss and its variance rise."
+  },
+  {
+    "id": 126,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is the null hypothesis H0?",
+    "back": "The default claim of no effect or no difference, assumed true until the sample data provide strong evidence against it."
+  },
+  {
+    "id": 127,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is the alternative hypothesis H1?",
+    "back": "The claim the analyst suspects may be true instead of H0, which is adopted only if the data provide sufficient evidence against H0."
+  },
+  {
+    "id": 128,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Define a Type I error.",
+    "back": "Rejecting H0 when H0 is actually true, a false positive. Its probability is the significance level, alpha."
+  },
+  {
+    "id": 129,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Define a Type II error.",
+    "back": "Failing to reject H0 when H0 is actually false, a false negative. Its probability is denoted beta."
+  },
+  {
+    "id": 130,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is the power of a hypothesis test?",
+    "back": "1 minus beta, the probability of correctly rejecting a false H0."
+  },
+  {
+    "id": 131,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What happens to power as sample size increases, holding alpha fixed?",
+    "back": "Power increases, because a larger sample reduces sampling variability and makes a true effect easier to detect."
+  },
+  {
+    "id": 132,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is the tradeoff between alpha and beta at a fixed sample size?",
+    "back": "Lowering alpha to reduce Type I error raises beta (and lowers power); the two error probabilities move in opposite directions for a fixed n."
+  },
+  {
+    "id": 133,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Can a hypothesis test prove H0 is true?",
+    "back": "No. Failing to reject H0 only means insufficient evidence was found against it, not that H0 has been proven true."
+  },
+  {
+    "id": 134,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is the p-value, precisely defined?",
+    "back": "The probability, assuming H0 is true, of observing a test statistic at least as extreme as the one actually observed."
+  },
+  {
+    "id": 135,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What decision rule uses the p-value?",
+    "back": "Reject H0 if the p-value is less than or equal to alpha; otherwise fail to reject H0."
+  },
+  {
+    "id": 136,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Is the p-value the probability that H0 is true?",
+    "back": "No, this is a common misinterpretation. The p-value is a conditional probability computed assuming H0 is true, not the probability that H0 itself is true."
+  },
+  {
+    "id": 137,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Why can a trivially small effect still produce a very small p-value?",
+    "back": "Because the p-value reflects both effect size and sample size; with a large enough sample, even a practically meaningless difference becomes statistically significant."
+  },
+  {
+    "id": 138,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "How does a two-sided test at level alpha split the rejection region?",
+    "back": "Into two tails, each with probability alpha divided by 2."
+  },
+  {
+    "id": 139,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "One-sample z-test statistic formula (sigma known)?",
+    "back": "z = (x-bar - mu0) ÷ (sigma ÷ √(n))."
+  },
+  {
+    "id": 140,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "When should a t-test be used instead of a z-test for a mean?",
+    "back": "When the population standard deviation sigma is unknown and the sample size is small (commonly n less than 30), so the sample standard deviation s must be used."
+  },
+  {
+    "id": 141,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "One-sample t-test statistic formula?",
+    "back": "t = (x-bar - mu0) ÷ (s ÷ √(n)), with n - 1 degrees of freedom."
+  },
+  {
+    "id": 142,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Why does the t distribution have heavier tails than the normal distribution?",
+    "back": "Because it accounts for the extra uncertainty of estimating sigma from the sample using s, which the z distribution does not need to do."
+  },
+  {
+    "id": 143,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What happens to the t distribution as sample size n grows large?",
+    "back": "It converges to the standard normal distribution, so the t-test and z-test become numerically indistinguishable."
+  },
+  {
+    "id": 144,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "z(0.025), the two-sided critical value at alpha = 0.05?",
+    "back": "1.960."
+  },
+  {
+    "id": 145,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "z(0.005), the two-sided critical value at alpha = 0.01?",
+    "back": "2.576."
+  },
+  {
+    "id": 146,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Two-sample z-test statistic for a difference in means, variances known?",
+    "back": "z = (x1-bar - x2-bar) ÷ √(sigma1²÷n1 + sigma2²÷n2)."
+  },
+  {
+    "id": 147,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Pooled variance formula for a two-sample t-test with equal population variances assumed?",
+    "back": "sp² = [(n1-1)s1² + (n2-1)s2²] ÷ (n1 + n2 - 2)."
+  },
+  {
+    "id": 148,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Pooled two-sample t-statistic formula?",
+    "back": "t = (x1-bar - x2-bar) ÷ √(sp² (1÷n1 + 1÷n2)), with n1 + n2 - 2 degrees of freedom."
+  },
+  {
+    "id": 149,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is Welch's approximation used for?",
+    "back": "Comparing two sample means when population variances cannot be assumed equal; it uses the unpooled standard error and an adjusted, generally non-integer, degrees-of-freedom formula."
+  },
+  {
+    "id": 150,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What does a 95% confidence interval actually mean?",
+    "back": "Across repeated sampling, 95% of intervals built this way would capture the true parameter. It is NOT a 95% probability that the true value lies in this one already-computed interval."
+  },
+  {
+    "id": 151,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Confidence interval for a mean when sigma is known?",
+    "back": "x-bar +÷- z(alpha÷2) × sigma ÷ √(n)."
+  },
+  {
+    "id": 152,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Confidence interval for a mean when sigma is unknown?",
+    "back": "x-bar +÷- t(alpha÷2, n-1) × s ÷ √(n)."
+  },
+  {
+    "id": 153,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Confidence interval for a population variance uses which distribution?",
+    "back": "The chi-square distribution with n - 1 degrees of freedom. The resulting interval is not symmetric around the sample variance."
+  },
+  {
+    "id": 154,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Confidence interval formula for a population variance?",
+    "back": "[ (n-1)s² ÷ chi-square(alpha÷2, n-1) , (n-1)s² ÷ chi-square(1-alpha÷2, n-1) ]."
+  },
+  {
+    "id": 155,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "In the variance confidence interval, which chi-square critical value goes in the denominator of the LOWER bound?",
+    "back": "The UPPER chi-square critical value, chi-square(alpha÷2, n-1); this reversal is a common source of exam errors."
+  },
+  {
+    "id": 156,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Confidence interval for a population proportion p?",
+    "back": "p-hat +÷- z(alpha÷2) × √( p-hat(1-p-hat) ÷ n ), valid when n×p-hat and n×(1-p-hat) are both reasonably large."
+  },
+  {
+    "id": 157,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "How are a two-sided hypothesis test and a confidence interval at the same alpha connected?",
+    "back": "H0: mu = mu0 is rejected at level alpha if and only if mu0 falls outside the corresponding (1-alpha) confidence interval for mu."
+  },
+  {
+    "id": 158,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What does the chi-square goodness-of-fit test statistic measure?",
+    "back": "The discrepancy between observed counts Oi and expected counts Ei across k classes: chi-square = sum of (Oi - Ei)² ÷ Ei."
+  },
+  {
+    "id": 159,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Degrees of freedom for the chi-square goodness-of-fit test?",
+    "back": "k - 1 - r, where k is the number of classes and r is the number of parameters estimated from the same data used to build the classes."
+  },
+  {
+    "id": 160,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What rule of thumb governs class sizes in a chi-square goodness-of-fit test?",
+    "back": "Each expected count Ei should generally be at least 5; adjacent classes with smaller expected counts are often combined."
+  },
+  {
+    "id": 161,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is a key weakness of the chi-square goodness-of-fit test?",
+    "back": "It requires grouping continuous data into discrete classes, which discards information and makes results sensitive to the arbitrary choice of class boundaries."
+  },
+  {
+    "id": 162,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What does the Kolmogorov-Smirnov (K-S) test statistic D measure?",
+    "back": "The supremum (maximum) vertical distance between the empirical CDF Fn(x) and the fitted CDF F(x): D = sup over x of |Fn(x) - F(x)|."
+  },
+  {
+    "id": 163,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Why can the K-S statistic D be computed exactly without checking every real number x?",
+    "back": "Because the empirical CDF Fn(x) is a step function that only changes value at the observed data points, so D only needs to be checked just before and after each order statistic."
+  },
+  {
+    "id": 164,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is a key limitation of the K-S test for actuarial severity modeling?",
+    "back": "It weights every part of the distribution equally, so it can miss a poor fit in the tail even if the fit is good in the center, which matters for reserving and pricing accuracy."
+  },
+  {
+    "id": 165,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is the Anderson-Darling test statistic designed to emphasize?",
+    "back": "Discrepancies between the empirical and fitted CDFs in the tails of the distribution, making it more tail-sensitive than the K-S test."
+  },
+  {
+    "id": 166,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is the weight function in the Anderson-Darling statistic and why does it matter?",
+    "back": "1 ÷ (F(x)(1-F(x))); it grows very large as F(x) approaches 0 or 1, giving much more weight to gaps in the extreme tails than to gaps near the median."
+  },
+  {
+    "id": 167,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Why is the Anderson-Darling test generally preferred over K-S for severity distributions?",
+    "back": "Because tail behavior drives reserving and pricing accuracy, and A-D is specifically weighted to be sensitive to tail discrepancies, while K-S treats the tails and center equally."
+  },
+  {
+    "id": 168,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What does it mean for two models to be nested?",
+    "back": "The simpler model is a special case of the more complex model, obtained by restricting one or more parameters, often by setting them to a fixed value such as zero."
+  },
+  {
+    "id": 169,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Likelihood ratio test (LRT) statistic formula?",
+    "back": "LRT = 2 × (ln L1 - ln L0) = 2 × ln(L1 ÷ L0), where L1 is the maximized likelihood of the full model and L0 is the maximized likelihood of the restricted model."
+  },
+  {
+    "id": 170,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What distribution does the LRT statistic follow under H0, and with how many degrees of freedom?",
+    "back": "Approximately a chi-square distribution, with degrees of freedom equal to the number of additional parameters in the full model relative to the restricted model."
+  },
+  {
+    "id": 171,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Why is L1 always at least as large as L0 in a likelihood ratio test?",
+    "back": "Because the restricted model is a special case of the full model, so the full model has at least as much flexibility and can never fit worse."
+  },
+  {
+    "id": 172,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Give an actuarial example of nested severity distributions suited to an LRT.",
+    "back": "A two-parameter Weibull versus a one-parameter exponential; a Weibull with its shape parameter fixed at 1 reduces exactly to an exponential."
+  },
+  {
+    "id": 173,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "In Worked Example 1, a sample of n = 16 claims gives x-bar = 4550, s = 620, testing against mu0 = 4200. What is the t-statistic?",
+    "back": "t = (4550 - 4200) ÷ (620 ÷ √(16)) = 350 ÷ 155 = 2.258."
+  },
+  {
+    "id": 174,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "In Worked Example 1, with t = 2.258 and critical value t(0.025, 15) = 2.131, what is the conclusion at alpha = 0.05?",
+    "back": "Reject H0; there is statistically significant evidence the mean severity differs from the 4,200 benchmark, since |t| = 2.258 exceeds 2.131."
+  },
+  {
+    "id": 175,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "In Worked Example 1, would the same t = 2.258 lead to rejection at alpha = 0.01?",
+    "back": "No; the critical value t(0.005, 15) = 2.947 exceeds 2.258, so H0 would not be rejected at the 1% level."
+  },
+  {
+    "id": 176,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "In Worked Example 2, with observed counts 40, 55, 50, 35, 20 and expected counts 36, 60, 52, 32, 20, what is the chi-square statistic?",
+    "back": "Approximately 1.219, computed as the sum of (Oi-Ei)²÷Ei across the five bands."
+  },
+  {
+    "id": 177,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "In Worked Example 2, with r = 0 parameters estimated and k = 5 classes, how many degrees of freedom does the chi-square test use?",
+    "back": "k - 1 - r = 5 - 1 - 0 = 4 degrees of freedom."
+  },
+  {
+    "id": 178,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "In Worked Example 2, with chi-square = 1.219 and critical value chi-square(0.05, 4) = 9.488, what is the conclusion?",
+    "back": "Fail to reject H0; the observed statistic is far below the critical value, so there is no significant evidence of a poor fit."
+  },
+  {
+    "id": 179,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is a rejection region (critical region)?",
+    "back": "The set of test statistic values that leads to rejection of H0, determined by the chosen alpha and the reference distribution."
+  },
+  {
+    "id": 180,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Difference between a one-sided and a two-sided hypothesis test?",
+    "back": "A one-sided test places the entire alpha in a single tail (testing greater than or less than); a two-sided test splits alpha into two tails (testing simply not equal to)."
+  },
+  {
+    "id": 181,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Why is statistical significance not the same as practical significance?",
+    "back": "A statistically significant p-value can arise from a trivially small effect measured with a very large sample; the actuary must separately assess whether the effect size is materially important to the business."
+  },
+  {
+    "id": 182,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "When comparing two independent population means, what is tested under H0?",
+    "back": "H0: mu1 = mu2, that the two population means are equal, tested using the difference x1-bar minus x2-bar."
+  },
+  {
+    "id": 183,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What caveat applies to K-S critical value tables when distribution parameters are estimated from the same sample?",
+    "back": "The standard K-S critical values are technically not valid in that case; adjusted critical values or simulation are needed instead."
+  },
+  {
+    "id": 184,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What general actuarial modeling principle does the LRT support?",
+    "back": "The principle of parsimony: prefer the simpler model unless the added complexity of the full model produces a statistically significant improvement in fit."
+  },
+  {
+    "id": 185,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "How does increasing alpha affect power, holding sample size fixed?",
+    "back": "Increasing alpha raises power (a looser rejection threshold catches more true effects), but also increases the Type I error rate."
+  },
+  {
+    "id": 186,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What is the empirical distribution function Fn(x)?",
+    "back": "The proportion of sample observations less than or equal to x, built directly from the n data points; it is a step function."
+  },
+  {
+    "id": 187,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "Is the p-value a measure of effect size?",
+    "back": "No. The p-value reflects both effect size and sample size together; it does not by itself measure how large or important an effect is."
+  },
+  {
+    "id": 188,
+    "domain": "statistical_inference",
+    "chapter": "Hypothesis Testing and Confidence Intervals",
+    "front": "What must an actuary check before applying the chi-square confidence interval for a variance or the normal approximation for a proportion?",
+    "back": "For the proportion interval, that n×p-hat and n×(1-p-hat) are both reasonably large (commonly at least 5 or 10); the chi-square variance interval relies on the data being approximately normal."
+  },
+  {
+    "id": 189,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What does Bayes' theorem state in terms of prior, likelihood, and posterior?",
+    "back": "The posterior distribution π(theta given x) equals the likelihood f(x given theta) times the prior π(theta), divided by the marginal probability of the data f(x). In shorthand: posterior is proportional to likelihood times prior."
+  },
+  {
+    "id": 190,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the prior distribution in Bayesian statistics?",
+    "back": "The probability distribution π(theta) that reflects belief about an unknown parameter theta before any new data is observed, often based on industry experience or expert judgment."
+  },
+  {
+    "id": 191,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What role does the marginal density f(x) play in Bayes' theorem?",
+    "back": "It is the normalizing constant, obtained by integrating the likelihood times prior over all values of theta, that makes the posterior density integrate to 1. It does not depend on theta."
+  },
+  {
+    "id": 192,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is a conjugate prior?",
+    "back": "A prior distribution that, when combined with a given likelihood, produces a posterior distribution in the same distributional family as the prior."
+  },
+  {
+    "id": 193,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "In the gamma-Poisson conjugate pair, what is the prior distribution and what is the likelihood?",
+    "back": "The prior on the Poisson mean theta is gamma(alpha, beta). The likelihood, given n observed Poisson counts, is proportional to theta raised to the sum of counts, times e to the negative n times theta."
+  },
+  {
+    "id": 194,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "Give the gamma-Poisson posterior updating formulas.",
+    "back": "alpha_posterior = alpha_prior + sum of observed claim counts. beta_posterior = beta_prior + n, where n is the number of exposure periods observed."
+  },
+  {
+    "id": 195,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "If the prior is gamma(alpha=4, beta=2) and 6 claims are observed over 3 exposure years, what is the posterior distribution?",
+    "back": "gamma(alpha_posterior = 4+6 = 10, beta_posterior = 2+3 = 5), with posterior mean 10÷5 = 2.0."
+  },
+  {
+    "id": 196,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the posterior mean of a gamma(alpha, beta) distribution?",
+    "back": "alpha divided by beta."
+  },
+  {
+    "id": 197,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "In the beta-binomial conjugate pair, what is the prior distribution?",
+    "back": "A beta distribution with parameters a and b, used as the prior on the binomial success probability theta, on the interval (0,1)."
+  },
+  {
+    "id": 198,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "Give the beta-binomial posterior updating formulas.",
+    "back": "a_posterior = a_prior + x (observed successes). b_posterior = b_prior + (m minus x) (observed failures), where m is the number of trials."
+  },
+  {
+    "id": 199,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the posterior mean of a beta(a, b) distribution?",
+    "back": "a divided by (a + b)."
+  },
+  {
+    "id": 200,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "In the normal-normal conjugate pair, what distributions are assumed for the data and the prior?",
+    "back": "The data X given theta is normal with mean theta and known variance sigma squared. The prior on theta is normal with mean mu_0 and variance tau squared."
+  },
+  {
+    "id": 201,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the posterior mean formula in the normal-normal conjugate pair?",
+    "back": "posterior mean = Z times x-bar + (1 minus Z) times mu_0, where Z = (n÷sigma squared) divided by [(n÷sigma squared) + (1÷tau squared)]."
+  },
+  {
+    "id": 202,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the posterior variance formula in the normal-normal conjugate pair?",
+    "back": "1 divided by [(n÷sigma squared) + (1÷tau squared)], which is always smaller than either the prior variance tau squared or sigma squared÷n alone."
+  },
+  {
+    "id": 203,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "How does the Bayesian posterior mean relate to actuarial credibility theory?",
+    "back": "In conjugate models, the posterior mean can be rewritten as Z times the observed data mean plus (1 minus Z) times the prior (manual) mean, exactly matching the credibility-weighted-average formula."
+  },
+  {
+    "id": 204,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "In the gamma-Poisson posterior mean, what is the credibility factor Z equal to?",
+    "back": "Z = n ÷ (beta_prior + n), where n is the number of exposure periods observed and beta_prior is the prior gamma rate parameter."
+  },
+  {
+    "id": 205,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What happens to the credibility factor Z as the number of observed exposure periods n grows very large?",
+    "back": "Z approaches 1, meaning the posterior estimate relies almost entirely on the observed data and gives almost no weight to the prior mean."
+  },
+  {
+    "id": 206,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What happens to the credibility factor Z when the prior is very concentrated (low prior variance, high confidence)?",
+    "back": "Z shrinks toward 0, so the posterior estimate leans heavily on the prior mean and gives little weight to newly observed data."
+  },
+  {
+    "id": 207,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the posterior mode, also called the MAP estimate?",
+    "back": "The value of theta that maximizes the posterior density, i.e. the maximum a posteriori estimate."
+  },
+  {
+    "id": 208,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What loss function does the posterior mean minimize?",
+    "back": "Expected squared error loss."
+  },
+  {
+    "id": 209,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What loss function does the posterior median minimize?",
+    "back": "Expected absolute error loss."
+  },
+  {
+    "id": 210,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "For a gamma(alpha, beta) posterior with alpha greater than 1, what is the posterior mode?",
+    "back": "(alpha minus 1) divided by beta, which always differs from the posterior mean of alpha divided by beta since the mode subtracts 1 from alpha in the numerator."
+  },
+  {
+    "id": 211,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "When do the posterior mean, median, and mode coincide?",
+    "back": "When the posterior distribution is symmetric and unimodal, such as in the normal-normal conjugate case."
+  },
+  {
+    "id": 212,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is a Bayesian credible interval?",
+    "back": "An interval [L, U] such that the posterior probability theta falls between L and U equals a stated level, for example the integral of the posterior density from L to U equals 0.90 for a 90 percent credible interval."
+  },
+  {
+    "id": 213,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "In a frequentist confidence interval, is theta treated as random or fixed?",
+    "back": "Theta is treated as a fixed, unknown constant. The interval itself, built from a random sample, is the random quantity."
+  },
+  {
+    "id": 214,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the correct interpretation of a 90 percent frequentist confidence interval?",
+    "back": "If the sampling procedure were repeated many times, 90 percent of the resulting intervals would contain the true fixed parameter theta. It is not a direct probability statement about one already-computed interval."
+  },
+  {
+    "id": 215,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "In a Bayesian credible interval, is theta treated as random or fixed?",
+    "back": "Theta is treated as the random variable, and once the posterior is computed, the credible interval is a fixed numeric interval with a direct probability statement attached to it."
+  },
+  {
+    "id": 216,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the key conceptual difference between a Bayesian credible interval and a frequentist confidence interval?",
+    "back": "A credible interval allows a direct probability statement about theta given the observed data, since theta is random in the Bayesian framework; a confidence interval only supports a statement about long-run coverage across repeated sampling, since theta is fixed in the frequentist framework."
+  },
+  {
+    "id": 217,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is an equal-tailed credible interval?",
+    "back": "A credible interval that places the stated significance level evenly in each tail of the posterior, for example the 5th and 95th posterior percentiles for a 90 percent interval."
+  },
+  {
+    "id": 218,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is a highest posterior density (HPD) interval?",
+    "back": "The shortest possible interval containing a stated amount of posterior probability mass. For a skewed posterior it is narrower than the equal-tailed interval, and its tail probabilities need not be equal."
+  },
+  {
+    "id": 219,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is Monte Carlo simulation used for?",
+    "back": "Estimating a quantity of interest, such as an expected value, probability, or quantile, by generating many pseudo-random draws from a probability model and computing the corresponding sample statistic."
+  },
+  {
+    "id": 220,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "According to the law of large numbers, what does the average of many simulated draws converge to?",
+    "back": "The true mean mu of the distribution being simulated from, as the number of simulated trials n grows large."
+  },
+  {
+    "id": 221,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "How does the standard error of a Monte Carlo mean estimate behave as the number of simulated trials n increases?",
+    "back": "It decreases proportionally to 1 divided by the square root of n, so quadrupling the number of trials roughly halves the simulation error."
+  },
+  {
+    "id": 222,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "How is a quantile, such as the 99.5th percentile, estimated from simulated data?",
+    "back": "Sort the simulated values from smallest to largest and read off the value at the rank corresponding to that percentile (approximately p times n, possibly interpolated)."
+  },
+  {
+    "id": 223,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "Why is Monte Carlo simulation especially useful for aggregate loss models with policy limits and deductibles?",
+    "back": "Because a closed-form formula for the expected value or quantile of the resulting distribution is often difficult or impossible to derive analytically, while simulating many years of claim experience and applying policy terms directly is straightforward."
+  },
+  {
+    "id": 224,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the inverse transform method used for?",
+    "back": "Simulating a random draw from a distribution whose cumulative distribution function (CDF) is known and invertible, using a uniform random number as the starting point."
+  },
+  {
+    "id": 225,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "State the inverse transform method's core mathematical fact.",
+    "back": "If U is Uniform(0,1) and F is a continuous, strictly increasing CDF, then X = F inverse of U has exactly the distribution described by F."
+  },
+  {
+    "id": 226,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "List the three steps of the inverse transform method.",
+    "back": "1. Generate a Uniform(0,1) draw u. 2. Set x = F inverse(u). 3. Repeat independently for each additional simulated draw needed."
+  },
+  {
+    "id": 227,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the inverse CDF of an Exponential distribution with mean theta?",
+    "back": "x = negative theta times ln(1 minus u), derived by setting F(x) = 1 minus e to the negative x÷theta equal to u and solving for x."
+  },
+  {
+    "id": 228,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "Using the inverse transform method, simulate an Exponential claim size with mean 500 given a uniform draw of u = 0.70.",
+    "back": "x = negative 500 times ln(1 minus 0.70) = negative 500 times ln(0.30), which is approximately negative 500 times (negative 1.2040) = 602.0."
+  },
+  {
+    "id": 229,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "In the inverse transform method applied to an Exponential distribution, what happens when the uniform draw u is close to 1?",
+    "back": "The simulated value becomes very large, since ln(1 minus u) approaches negative ∞, consistent with the long right tail of the exponential distribution."
+  },
+  {
+    "id": 230,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "How is the inverse transform method adapted for discrete distributions?",
+    "back": "The interval (0,1) is partitioned into consecutive sub-intervals whose lengths equal the probability mass at each outcome, and whichever outcome's sub-interval contains the generated uniform draw is selected."
+  },
+  {
+    "id": 231,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What alternative simulation method is used when a distribution's CDF cannot be inverted in closed form?",
+    "back": "Numerical root-finding or algorithms such as the accept-reject method."
+  },
+  {
+    "id": 232,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the bootstrap method used for?",
+    "back": "Estimating the sampling distribution of a statistic, such as a sample mean or a fitted model parameter, by resampling from the observed data, when the population distribution is unknown or a closed-form formula for the statistic's variability is unavailable."
+  },
+  {
+    "id": 233,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What distinguishes the nonparametric bootstrap's resampling procedure?",
+    "back": "Each bootstrap sample is drawn from the original n observations WITH replacement, so some original observations appear multiple times and others do not appear at all in a given bootstrap sample."
+  },
+  {
+    "id": 234,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "List the four steps of the nonparametric bootstrap procedure.",
+    "back": "1. Draw a bootstrap sample of size n with replacement from the original data. 2. Compute the statistic of interest on that sample. 3. Repeat many times (B replications). 4. Use the empirical distribution of the B replications to approximate the true sampling distribution."
+  },
+  {
+    "id": 235,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "How is the standard error of a statistic estimated using the bootstrap?",
+    "back": "By computing the standard deviation of the B bootstrap replications of that statistic."
+  },
+  {
+    "id": 236,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the percentile method for constructing a bootstrap confidence interval?",
+    "back": "Sort the B bootstrap replications of the statistic and take the alpha÷2 and (1 minus alpha÷2) empirical percentiles directly as the lower and upper confidence bounds."
+  },
+  {
+    "id": 237,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "For a 90 percent bootstrap confidence interval with B = 1,000 replications using the percentile method, which ranked values form the bounds?",
+    "back": "The 50th smallest value (5th percentile) as the lower bound and the 950th smallest value (95th percentile) as the upper bound."
+  },
+  {
+    "id": 238,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "Given claim sizes 200, 350, 400, 600, 950, what is the original sample mean?",
+    "back": "(200+350+400+600+950)÷5 = 2500÷5 = 500."
+  },
+  {
+    "id": 239,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "Why might an actuary prefer the bootstrap over a large-sample asymptotic normality approximation for a fitted GLM parameter?",
+    "back": "Asymptotic approximations can be inaccurate in small samples; the bootstrap empirically characterizes the estimator's variability directly from resampled data without relying on that large-sample assumption."
+  },
+  {
+    "id": 240,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the main computational tradeoff of bootstrap methods?",
+    "back": "They require many repeated model fits or statistic calculations (often thousands), which can be demanding when the underlying statistic is expensive to compute."
+  },
+  {
+    "id": 241,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the parametric bootstrap, as opposed to the nonparametric bootstrap?",
+    "back": "A bootstrap variant that resamples from a fitted parametric model itself rather than resampling directly from the original observed data."
+  },
+  {
+    "id": 242,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "In the gamma-Poisson pair, what does the prior mean alpha÷beta represent in credibility terms?",
+    "back": "It is the manual or a priori mean, the estimate used before any experience data is incorporated."
+  },
+  {
+    "id": 243,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "Why is the posterior distribution only proportional to likelihood times prior, rather than exactly equal to it?",
+    "back": "Because the normalizing constant f(x) has been dropped; it is recovered afterward as whatever value makes the posterior density integrate to 1 over theta."
+  },
+  {
+    "id": 244,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What role does the shape of the posterior, as a function of theta, play in solving conjugate prior problems on the exam?",
+    "back": "Recognizing the posterior's functional shape in theta is usually enough to identify which known distribution family it belongs to and read off its parameters, avoiding the need to compute the full normalizing integral."
+  },
+  {
+    "id": 245,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "How does a very diffuse (high variance) prior affect the posterior compared to a very concentrated (low variance) prior?",
+    "back": "A diffuse prior lets the observed data dominate the posterior almost immediately, while a concentrated prior keeps the posterior close to the prior mean even after a moderate amount of data is observed."
+  },
+  {
+    "id": 246,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "In the beta-binomial pair, what does the parameter m represent?",
+    "back": "The number of binomial trials observed, such as the number of policyholders or exposure units examined."
+  },
+  {
+    "id": 247,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What is the defining feature that makes a resampling method 'nonparametric' in the bootstrap context?",
+    "back": "It draws resamples directly from the empirical observed data without assuming the data follows any specific parametric distribution family."
+  },
+  {
+    "id": 248,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "If a second uniform draw of u = 0.20 is used with the Exponential(mean=500) inverse transform formula, what is the simulated value?",
+    "back": "x = negative 500 times ln(1 minus 0.20) = negative 500 times ln(0.80), approximately negative 500 times (negative 0.2231) = 111.6."
+  },
+  {
+    "id": 249,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "Why does the exponential inverse transform formula produce small simulated values for small uniform draws?",
+    "back": "When u is close to 0, ln(1 minus u) is close to 0, so x = negative theta times ln(1 minus u) is close to 0, matching the exponential distribution's concentration of probability near zero."
+  },
+  {
+    "id": 250,
+    "domain": "statistical_inference",
+    "chapter": "Bayesian Estimation and Simulation Methods",
+    "front": "What general pattern do all three conjugate posterior means (gamma-Poisson, beta-binomial, normal-normal) share?",
+    "back": "Each posterior mean is a weighted average of the observed sample statistic and the prior mean, with the weight on the data increasing in sample size and decreasing in prior confidence (or increasing in prior variance)."
+  },
+  {
+    "id": 251,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Why is OLS regression a poor fit for claim severity data?",
+    "back": "Severity is non-negative and right skewed, but a normal distribution allows negative values and is symmetric, so OLS can produce nonsensical negative predictions and misrepresents the shape of the data."
+  },
+  {
+    "id": 252,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Why is OLS regression a poor fit for claim count data?",
+    "back": "Claim counts are non-negative integers, but OLS predicts a continuous response that can be fractional or negative, which does not match how claim counts actually behave."
+  },
+  {
+    "id": 253,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is heteroscedasticity, and why does it matter for insurance data?",
+    "back": "Heteroscedasticity means the variance of the response changes with the mean. Insurance data typically show variance growing as the mean grows, which violates the OLS assumption of constant variance and leads to incorrect standard errors."
+  },
+  {
+    "id": 254,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Write the general form of an exponential family distribution.",
+    "back": "f(y; theta, phi) = exp[(y×theta - b(theta)) ÷ a(phi) + c(y, phi)], where theta is the canonical parameter, phi is the dispersion parameter, and b and c are functions defining the distribution."
+  },
+  {
+    "id": 255,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "In the exponential family form, what does theta represent?",
+    "back": "Theta is the canonical parameter, also called the natural parameter, and it is the parameter through which the mean of the distribution is expressed."
+  },
+  {
+    "id": 256,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "In the exponential family form, what does phi represent?",
+    "back": "Phi is the dispersion parameter, which controls the scale of the variance of the distribution, separate from the canonical parameter theta."
+  },
+  {
+    "id": 257,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "In exponential family notation, how is the mean of Y expressed in terms of b(theta)?",
+    "back": "E(Y) = mu = b'(theta), the first derivative of b with respect to theta."
+  },
+  {
+    "id": 258,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "In exponential family notation, how is the variance of Y expressed in terms of b(theta)?",
+    "back": "Var(Y) = a(phi) × b''(theta), the dispersion function times the second derivative of b with respect to theta."
+  },
+  {
+    "id": 259,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the variance function V(mu)?",
+    "back": "The variance function is b''(theta) re-expressed as a function of mu (since mu = b'(theta)). It captures how the variance of Y depends on the mean for a given distribution."
+  },
+  {
+    "id": 260,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Write the general mean-variance relationship used in GLMs.",
+    "back": "Var(Y) = phi × V(mu), where phi is the dispersion parameter and V(mu) is the variance function determined by the chosen distribution."
+  },
+  {
+    "id": 261,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the variance function for the normal distribution?",
+    "back": "V(mu) = 1, a constant, meaning the variance does not depend on the mean, matching the homoscedasticity assumption of OLS."
+  },
+  {
+    "id": 262,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the variance function for the Poisson distribution?",
+    "back": "V(mu) = mu, so the variance equals the mean, which is why Var(Y) = mu for a Poisson variable with dispersion parameter fixed at 1."
+  },
+  {
+    "id": 263,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the variance function for the gamma distribution?",
+    "back": "V(mu) = mu², so the variance grows with the square of the mean, and the coefficient of variation stays constant regardless of the size of the mean."
+  },
+  {
+    "id": 264,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the variance function for the binomial distribution?",
+    "back": "V(mu) = mu(1-mu), where mu is between 0 and 1. This is largest at mu = 0.5 and shrinks toward zero as mu approaches 0 or 1."
+  },
+  {
+    "id": 265,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What does it mean for a claim count variable to be overdispersed?",
+    "back": "Overdispersion means the sample variance exceeds the sample mean, which contradicts the Poisson assumption that variance equals mean, and often signals that a negative binomial model would fit better."
+  },
+  {
+    "id": 266,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Name the three components of a generalized linear model.",
+    "back": "The random component (the distribution of the response), the systematic component (the linear predictor), and the link function (which connects the mean to the linear predictor)."
+  },
+  {
+    "id": 267,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the random component of a GLM?",
+    "back": "The random component is the choice of exponential family distribution assumed for the response variable Y, such as Poisson, gamma, binomial, or normal."
+  },
+  {
+    "id": 268,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the systematic component of a GLM?",
+    "back": "The systematic component, or linear predictor, is eta = X×beta, a linear combination of the explanatory variables and their coefficients."
+  },
+  {
+    "id": 269,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Write the formula for the linear predictor eta.",
+    "back": "eta = beta_0 + beta_1×x_1 + beta_2×x_2 + ... + beta_p×x_p, a linear combination of the predictor variables and their coefficients."
+  },
+  {
+    "id": 270,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the link function of a GLM?",
+    "back": "The link function g connects the mean of the response to the linear predictor through g(mu) = eta, equivalently mu = g^(-1)(eta)."
+  },
+  {
+    "id": 271,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Why is a link function needed instead of setting mu = eta directly?",
+    "back": "The linear predictor eta can be any real number, but the mean mu may need to be restricted (for example, always positive or always between 0 and 1). The link function enforces that restriction."
+  },
+  {
+    "id": 272,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the canonical link function?",
+    "back": "The canonical link is the specific link function for which the canonical parameter theta equals the linear predictor eta exactly, giving mathematically convenient estimation properties."
+  },
+  {
+    "id": 273,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the canonical link for the normal distribution?",
+    "back": "The identity link, g(mu) = mu."
+  },
+  {
+    "id": 274,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the canonical link for the Poisson distribution?",
+    "back": "The log link, g(mu) = ln(mu)."
+  },
+  {
+    "id": 275,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the canonical link for the gamma distribution?",
+    "back": "The reciprocal link, g(mu) = 1÷mu, though actuaries often use the log link with gamma models instead for interpretability."
+  },
+  {
+    "id": 276,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the canonical link for the binomial distribution?",
+    "back": "The logit link, g(mu) = ln(mu ÷ (1-mu))."
+  },
+  {
+    "id": 277,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Why do actuaries often use the log link with a gamma severity model instead of the canonical reciprocal link?",
+    "back": "The log link gives coefficients a multiplicative interpretation, where each rating factor multiplies the fitted mean by exp(beta), matching how real rating plans multiply a base rate by relativities."
+  },
+  {
+    "id": 278,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Is using the canonical link mandatory for a GLM?",
+    "back": "No. Any monotonic, differentiable link function can technically be paired with any exponential family distribution, though the canonical link has convenient mathematical properties and is a common default."
+  },
+  {
+    "id": 279,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "How is OLS regression a special case of a GLM?",
+    "back": "OLS is the GLM obtained by choosing the normal distribution as the random component and the identity link function, so that the fitted mean equals the linear predictor directly."
+  },
+  {
+    "id": 280,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "For the identity link, what is the relationship between mu and eta?",
+    "back": "mu = eta directly, since g(mu) = mu means no transformation is applied."
+  },
+  {
+    "id": 281,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "For the log link, how do you recover the fitted mean mu from the linear predictor eta?",
+    "back": "mu = exp(eta), since g(mu) = ln(mu) = eta implies exponentiating both sides."
+  },
+  {
+    "id": 282,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "For the logit link, how do you recover the fitted mean mu from the linear predictor eta?",
+    "back": "mu = exp(eta) ÷ (1 + exp(eta)), the inverse of g(mu) = ln(mu ÷ (1-mu)) = eta."
+  },
+  {
+    "id": 283,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "A GLM has intercept beta_0 = 2,000 and beta_1 = 0.04 for policy limit, with a normal distribution and identity link. What is the fitted severity for a 100,000 dollar limit?",
+    "back": "eta = 2,000 + 0.04×100,000 = 6,000. Because the link is identity, mu = eta = 6,000 dollars."
+  },
+  {
+    "id": 284,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "A Poisson GLM with a log link has beta_0 = -2.50, beta_1 = 0.30 for youthful driver, beta_2 = 0.15 for urban territory. What is the fitted frequency for a youthful urban driver?",
+    "back": "eta = -2.50 + 0.30 + 0.15 = -2.05. mu = exp(-2.05) is about 0.1287 claims per year."
+  },
+  {
+    "id": 285,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "In the youthful urban driver example, what is the fitted frequency for a baseline (non-youthful, non-urban) driver?",
+    "back": "eta = beta_0 = -2.50, so mu = exp(-2.50) is about 0.0821 claims per year."
+  },
+  {
+    "id": 286,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "In a log-link Poisson model, how do you interpret the ratio of fitted means between two policies that differ only in one indicator variable?",
+    "back": "The ratio equals e raised to the coefficient of that indicator, since fitted means combine multiplicatively under a log link. This gives a relativity interpretation."
+  },
+  {
+    "id": 287,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Why is claim frequency naturally modeled with a Poisson distribution rather than a normal distribution?",
+    "back": "Claim frequency is a count of non-negative integers, and the Poisson distribution is defined exactly on the non-negative integers, unlike the normal distribution which allows any real value."
+  },
+  {
+    "id": 288,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Why is claim severity often modeled with a gamma distribution rather than a normal distribution?",
+    "back": "Severity is strictly positive and right skewed, and the gamma distribution is defined only on positive values and naturally produces right-skewed shapes, unlike the symmetric normal distribution."
+  },
+  {
+    "id": 289,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "When is the binomial distribution the appropriate random component for a GLM?",
+    "back": "When the response is a proportion or probability, such as a lapse rate, conversion rate, or a claim indicator across a number of trials."
+  },
+  {
+    "id": 290,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What does it mean that the Poisson distribution has no separate dispersion parameter?",
+    "back": "For the Poisson distribution, a(phi) is fixed at 1, so the variance is entirely determined by the mean through Var(Y) = V(mu) = mu, with no additional scale parameter to estimate."
+  },
+  {
+    "id": 291,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What property of the gamma distribution's variance function explains why percentage variability in severity does not shrink for larger claims?",
+    "back": "Because V(mu) = mu², the standard deviation is proportional to the mean, so the coefficient of variation (standard deviation divided by mean) stays constant across claim sizes."
+  },
+  {
+    "id": 292,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the design matrix X in a GLM?",
+    "back": "The design matrix X contains the values of the explanatory variables (rating variables) for every observation, used together with the coefficient vector beta to form the linear predictor eta = X×beta."
+  },
+  {
+    "id": 293,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What algorithm is typically used to fit a GLM by maximum likelihood?",
+    "back": "Iteratively reweighted least squares, commonly abbreviated IRLS."
+  },
+  {
+    "id": 294,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "In what order are the three GLM components typically chosen when building an insurance pricing model?",
+    "back": "First the random component is chosen to match the nature of the response (Poisson for counts, gamma for severities, binomial for probabilities), then the systematic component is built from candidate rating variables, then the link function is selected."
+  },
+  {
+    "id": 295,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What distribution is sometimes used to model pure premium directly in one step rather than splitting frequency and severity?",
+    "back": "The Tweedie distribution, which can accommodate a mass of exact zeros combined with a continuous positive right-skewed component."
+  },
+  {
+    "id": 296,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What alternative to the Poisson distribution is used when claim count data show overdispersion?",
+    "back": "The negative binomial distribution, which has an additional parameter allowing the variance to exceed the mean."
+  },
+  {
+    "id": 297,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "For a normal distribution written in exponential family form with theta = mu and b(theta) = theta²÷2, what is b'(theta)?",
+    "back": "b'(theta) = theta = mu, confirming that E(Y) = mu for the normal distribution."
+  },
+  {
+    "id": 298,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "For a normal distribution written in exponential family form with b(theta) = theta²÷2, what is b''(theta)?",
+    "back": "b''(theta) = 1, a constant, so the variance function V(mu) = 1 and Var(Y) = phi (a constant, matching sigma²)."
+  },
+  {
+    "id": 299,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "For a Poisson distribution written in exponential family form with theta = ln(mu), what is b(theta)?",
+    "back": "b(theta) = exp(theta) = mu."
+  },
+  {
+    "id": 300,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "For a Poisson distribution, what are b'(theta) and b''(theta) both equal to, and what does that confirm?",
+    "back": "Both equal exp(theta) = mu, confirming E(Y) = mu and Var(Y) = mu, the defining mean-equals-variance property of the Poisson distribution."
+  },
+  {
+    "id": 301,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What happens to fitted claim frequency predictions under a log link if you compute exp(eta) for a very negative eta?",
+    "back": "The fitted mean approaches zero but never becomes negative, since e raised to any real number is always positive, which is exactly why the log link is chosen for count data."
+  },
+  {
+    "id": 302,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Under the logit link, what happens to the fitted probability mu as eta approaches positive ∞?",
+    "back": "mu = exp(eta) ÷ (1 + exp(eta)) approaches 1, staying bounded within the valid range for a probability."
+  },
+  {
+    "id": 303,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Under the logit link, what happens to the fitted probability mu as eta approaches negative ∞?",
+    "back": "mu = exp(eta) ÷ (1 + exp(eta)) approaches 0, staying bounded within the valid range for a probability."
+  },
+  {
+    "id": 304,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Why can a GLM use the same maximum likelihood fitting machinery for Poisson, gamma, binomial, and normal responses?",
+    "back": "Because all four distributions belong to the exponential family, so they share the same general likelihood structure, differing only in their specific b(theta), a(phi), and c(y, phi) functions."
+  },
+  {
+    "id": 305,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is the practical consequence of using a constant-variance model on data whose true variance grows with the mean?",
+    "back": "The resulting standard errors are wrong, confidence intervals are miscalibrated (too narrow in some ranges, too wide in others), and the parameter estimates are statistically inefficient."
+  },
+  {
+    "id": 306,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "In insurance rating, why is a multiplicative model structure (achieved via the log link) often preferred over an additive one?",
+    "back": "Real rating plans are typically built by multiplying a base rate by a series of relativities for each rating variable, and a log link naturally produces this multiplicative structure through fitted coefficients."
+  },
+  {
+    "id": 307,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What does a(phi) most commonly equal in many GLM applications?",
+    "back": "a(phi) is very often simply phi, or phi divided by a known prior weight w, written a(phi) = phi÷w."
+  },
+  {
+    "id": 308,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "True or false: a GLM requires the response variable to be normally distributed.",
+    "back": "False. A GLM allows the response to follow any distribution in the exponential family, of which the normal distribution is only one example."
+  },
+  {
+    "id": 309,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What is c(y, phi) in the exponential family density formula?",
+    "back": "A normalizing term that depends on y and phi but does not involve the canonical parameter theta; it ensures the density integrates or sums to 1."
+  },
+  {
+    "id": 310,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Why can't OLS regression guarantee that fitted claim frequency predictions stay non-negative?",
+    "back": "OLS uses the identity link, so fitted values equal the linear predictor directly, and a linear predictor can take any real value including negative numbers, with nothing to prevent a negative fitted frequency."
+  },
+  {
+    "id": 311,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "What variance function does the inverse Gaussian distribution have, relative to Poisson, gamma, and normal?",
+    "back": "The inverse Gaussian has variance function V(mu) = mu³, growing even faster with the mean than the gamma distribution's V(mu) = mu²."
+  },
+  {
+    "id": 312,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "If two GLMs use the same distribution but different link functions, will they generally produce the same fitted coefficients?",
+    "back": "No. The link function changes how the linear predictor relates to the mean, so the estimated coefficients generally differ between link choices even with the same underlying distribution and data."
+  },
+  {
+    "id": 313,
+    "domain": "generalized_linear_models",
+    "chapter": "Introduction to Generalized Linear Models",
+    "front": "Summarize in one sentence how a GLM generalizes OLS regression.",
+    "back": "A GLM generalizes OLS by allowing the response to follow any exponential family distribution and by connecting the mean to the linear predictor through a chosen link function, with OLS recovered exactly when the distribution is normal and the link is identity."
+  },
+  {
+    "id": 314,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What equation defines the link function g in a GLM?",
+    "back": "g(mu) = eta, where mu is the mean of the response and eta is the linear predictor, eta = b0 + b1x1 + b2x2 + ... + bpxp."
+  },
+  {
+    "id": 315,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is the inverse link function used for?",
+    "back": "It converts the linear predictor eta back to the mean scale: mu = g⁻¹(eta). It guarantees the fitted mean stays within the response variable's valid range."
+  },
+  {
+    "id": 316,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why does ordinary linear regression (identity link) often fail for insurance response variables?",
+    "back": "It places no restriction on fitted values, so it can predict a negative frequency, a negative severity, or a probability outside 0 and 1, none of which are valid for real insurance outcomes."
+  },
+  {
+    "id": 317,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is the formula for the identity link?",
+    "back": "g(mu) = mu, so mu = b0 + b1x1 + b2x2 + ... + bpxp directly, with no transformation."
+  },
+  {
+    "id": 318,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Under the identity link, how do predictor effects combine?",
+    "back": "Additively. Increasing x1 by one unit changes the fitted mean by exactly b1, regardless of the values of other predictors."
+  },
+  {
+    "id": 319,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What distribution is typically paired with the identity link?",
+    "back": "The normal (Gaussian) distribution."
+  },
+  {
+    "id": 320,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is the formula for the log link?",
+    "back": "g(mu) = ln(mu), so mu = exp(eta) = exp(b0 + b1x1 + b2x2 + ...)."
+  },
+  {
+    "id": 321,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why is the log link standard for Poisson claim frequency models?",
+    "back": "Because exp(eta) is always strictly positive for any real eta, it guarantees the fitted frequency can never be negative or zero, matching the real-world constraint on claim counts."
+  },
+  {
+    "id": 322,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "How does the log link produce a multiplicative rating structure?",
+    "back": "Because exp(a+b) = exp(a)×exp(b), the fitted mean factors as exp(b0)×exp(b1x1)×exp(b2x2), so each predictor contributes its own independent multiplicative factor to a base rate."
+  },
+  {
+    "id": 323,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What do actuaries call the factors exp(bjxj) produced by a log-link GLM?",
+    "back": "Relativities. Each one adjusts the base rate up or down by a percentage."
+  },
+  {
+    "id": 324,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "A Poisson log-link frequency GLM has b0 = -2.10, b1 (young driver) = 0.30, b2 (multi-policy) = -0.15. What is the fitted frequency for a young driver with the multi-policy discount?",
+    "back": "eta = -2.10 + 0.30 - 0.15 = -1.95. mu = exp(-1.95) = 0.1423 claims per exposure unit."
+  },
+  {
+    "id": 325,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "In the log-link frequency model with b1 = 0.30 for young driver, what is the young-driver relativity and what does it mean?",
+    "back": "exp(0.30) = 1.3499. A young driver is expected to have about 35.0% more claims than an otherwise identical driver who is not young."
+  },
+  {
+    "id": 326,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is the formula for the logit link?",
+    "back": "g(p) = ln(p ÷ (1-p)), the natural log of the odds."
+  },
+  {
+    "id": 327,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is the inverse logit (logistic) function?",
+    "back": "p = exp(eta) ÷ (1 + exp(eta)) = 1 ÷ (1 + exp(-eta))."
+  },
+  {
+    "id": 328,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why is the logit link standard for binomial models like lapse or claim occurrence probability?",
+    "back": "The inverse logit function always produces a value strictly between 0 and 1 for any real eta, matching the constraint that a probability must fall in that range."
+  },
+  {
+    "id": 329,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "As eta approaches negative ∞ under the logit link, what happens to p?",
+    "back": "p approaches 0."
+  },
+  {
+    "id": 330,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "As eta approaches positive ∞ under the logit link, what happens to p?",
+    "back": "p approaches 1."
+  },
+  {
+    "id": 331,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Under a logit link, what does exp(bj) represent?",
+    "back": "The multiplicative change in the odds (not the probability itself) associated with a one-unit increase in xj."
+  },
+  {
+    "id": 332,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "A logit-link lapse model has b0 = -1.20, b1 (annual pay) = 0.80, b2 (autopay) = -0.50. What is the lapse probability for a monthly-pay policyholder not enrolled in autopay?",
+    "back": "eta = -1.20. p = 1÷(1+exp(1.20)) = 1÷4.3201 = 0.2315, about 23.1%."
+  },
+  {
+    "id": 333,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "In that same lapse model, what is the lapse probability for an annual-pay, autopay-enrolled policyholder?",
+    "back": "eta = -1.20 + 0.80 - 0.50 = -0.90. p = 1÷(1+exp(0.90)) = 1÷3.4596 = 0.2891, about 28.9%."
+  },
+  {
+    "id": 334,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why does a change in the odds scale not translate into the same percentage change on the probability scale under a logit link?",
+    "back": "The logistic function is nonlinear, so a constant multiplicative change in odds produces a different-sized change in probability depending on where the baseline probability sits."
+  },
+  {
+    "id": 335,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is the formula for the inverse (reciprocal) link?",
+    "back": "g(mu) = 1÷mu, so mu = 1÷eta."
+  },
+  {
+    "id": 336,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What distribution is the inverse link the canonical link for?",
+    "back": "The Gamma distribution, often used for severity."
+  },
+  {
+    "id": 337,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why do actuaries often prefer the log link over the canonical inverse link for Gamma severity models?",
+    "back": "The log link produces multiplicative relativities that are easier to interpret and easier to combine with a log-link frequency model in a rating plan."
+  },
+  {
+    "id": 338,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What numerical quirk makes the inverse link less stable than the log link?",
+    "back": "Because mu = 1÷eta, the fitted mean is undefined when eta = 0, and the sign of mu flips depending on whether eta is positive or negative."
+  },
+  {
+    "id": 339,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "An inverse-link Gamma severity model has b0 = 0.00040, b1 (high-value vehicle) = 0.00010. What is the fitted severity for a standard-value vehicle?",
+    "back": "eta = 0.00040. mu = 1÷0.00040 = 2,500, so $2,500."
+  },
+  {
+    "id": 340,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "In that same inverse-link severity model, what is the fitted severity for a high-value vehicle, and what is notable about it?",
+    "back": "eta = 0.00050. mu = 1÷0.00050 = 2,000, so $2,000. Notably, the larger (more positive) coefficient produced a SMALLER fitted mean, the inverted relationship characteristic of the inverse link."
+  },
+  {
+    "id": 341,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is an offset in a GLM?",
+    "back": "A term included in the linear predictor whose coefficient is fixed at exactly 1.0 rather than estimated from the data."
+  },
+  {
+    "id": 342,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "How is exposure incorporated into a Poisson frequency GLM?",
+    "back": "As an offset equal to ln(exposure), so the linear predictor becomes eta = ln(exposure) + b0 + b1x1 + b2x2 + ..."
+  },
+  {
+    "id": 343,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What does including ln(exposure) as an offset cause the log-link Poisson model to predict?",
+    "back": "The expected claim COUNT, which equals exposure multiplied by a fitted frequency RATE per unit of exposure: E[claims] = e × exp(b0 + b1x1 + ...)."
+  },
+  {
+    "id": 344,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why must the offset's coefficient be fixed at exactly 1 rather than estimated?",
+    "back": "Fixing it at 1 forces the relationship between exposure and expected claim count to be exactly proportional (doubling exposure exactly doubles expected claims), matching the actuarial definition of frequency as claims divided by exposure."
+  },
+  {
+    "id": 345,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "A frequency model with rate 0.1423 claims per car-year is applied to a policy with 0.5 earned car-years exposure using a ln(exposure) offset. What is the expected claim count?",
+    "back": "eta = ln(0.5) + linear predictor for the rate = -0.6931 + (-1.95) = -2.6431. Expected count = exp(-2.6431) = 0.0711, which equals 0.5 × 0.1423."
+  },
+  {
+    "id": 346,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is the risk of including ln(exposure) as an ordinary predictor with an estimated coefficient instead of a fixed offset?",
+    "back": "The model would not be forced to preserve exact proportionality between exposure and expected claim count, so the fitted rate per unit of exposure would lose its clean multiplicative interpretation."
+  },
+  {
+    "id": 347,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "How does a GLM design matrix represent a categorical predictor with k levels?",
+    "back": "With k-1 indicator (dummy) variables, each coded 1 if the observation is in that level and 0 otherwise, with one level chosen as the base level that receives no indicator."
+  },
+  {
+    "id": 348,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What happens to the base level's effect in a categorical predictor's design matrix?",
+    "back": "It is absorbed into the intercept b0; every other level's coefficient measures its difference from the base level on the link scale."
+  },
+  {
+    "id": 349,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Does the choice of base level change the fitted values a GLM produces?",
+    "back": "No. It changes how the coefficients are interpreted, but not the fitted values for any combination of predictors."
+  },
+  {
+    "id": 350,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is an interaction term in a GLM?",
+    "back": "A term equal to the product of two predictors (or their indicators) added to the linear predictor, capturing that the effect of one variable depends on the level of another."
+  },
+  {
+    "id": 351,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "How is an interaction term written in the linear predictor?",
+    "back": "eta = b0 + b1x1 + b2x2 + b3(x1 × x2), where b3 measures the extra effect from the combination of x1 and x2 beyond their separate main effects."
+  },
+  {
+    "id": 352,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What does a GLM assume about two predictors if no interaction term is included between them?",
+    "back": "It assumes their effects are strictly additive on the link scale, meaning the effect of one predictor is the same at every level of the other."
+  },
+  {
+    "id": 353,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Give a classic actuarial example of an interaction term.",
+    "back": "Driver age and vehicle type: a young driver in a sports car may carry substantially more incremental risk than the young-driver effect and sports-car effect would separately suggest."
+  },
+  {
+    "id": 354,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is multicollinearity?",
+    "back": "A condition where two or more predictors carry overlapping information (are correlated), which can make individual coefficient estimates unstable even though overall model accuracy may still be reasonable."
+  },
+  {
+    "id": 355,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Give an example of two correlated predictors in an auto insurance GLM.",
+    "back": "Vehicle age and vehicle value, which tend to move together."
+  },
+  {
+    "id": 356,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What two criteria should a predictor satisfy before being included in a rating GLM?",
+    "back": "It should be statistically significant and have a plausible, explainable relationship to the outcome, since an unexplainable coefficient is hard to defend to regulators or embed in a live rating plan."
+  },
+  {
+    "id": 357,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Describe the iterative process of GLM model building.",
+    "back": "Fit an initial model, examine diagnostics and residual patterns, test whether adding or removing a predictor or interaction improves the model, and repeat, gradually converging on a model balancing accuracy, interpretability, and stability."
+  },
+  {
+    "id": 358,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Which link function is the canonical link for the Poisson distribution?",
+    "back": "The log link."
+  },
+  {
+    "id": 359,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Which link function is the canonical link for the Binomial distribution?",
+    "back": "The logit link."
+  },
+  {
+    "id": 360,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Which link function is the canonical link for the normal (Gaussian) distribution?",
+    "back": "The identity link."
+  },
+  {
+    "id": 361,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Which link function is the canonical link for the Gamma distribution?",
+    "back": "The inverse (reciprocal) link, g(mu) = 1÷mu."
+  },
+  {
+    "id": 362,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why is the identity link generally unsuitable for claim frequency modeling?",
+    "back": "It permits negative fitted values, which is impossible for a claim count or frequency, and it does not produce the multiplicative rating structure insurers rely on."
+  },
+  {
+    "id": 363,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "On the log scale, how do you convert a fitted coefficient bj into a relativity?",
+    "back": "Take exp(bj). This gives the multiplicative factor by which the fitted mean changes for a one-unit increase in xj, holding other predictors fixed."
+  },
+  {
+    "id": 364,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is the base rate in a log-link multiplicative rating structure?",
+    "back": "exp(b0), the fitted mean when every predictor is at its base level (all indicators equal 0)."
+  },
+  {
+    "id": 365,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "True or false: under a log link, relativities for different predictors multiply together onto the base rate.",
+    "back": "True. mu = exp(b0) × exp(b1x1) × exp(b2x2) × ..., so each predictor's relativity multiplies independently onto the base rate."
+  },
+  {
+    "id": 366,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "In a lapse GLM with a logit link, does exp(coefficient) scale the probability or the odds?",
+    "back": "The odds, not the probability directly. The probability itself must be recovered through the full inverse logit transformation."
+  },
+  {
+    "id": 367,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why is choosing a sensible base level for a categorical predictor useful in practice?",
+    "back": "It makes the fitted coefficients easier to interpret, for example by using the most common or lowest-risk category as the reference point, even though it does not affect the fitted values."
+  },
+  {
+    "id": 368,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What does it mean for exposure to enter a frequency model as a fixed-coefficient term rather than an estimated predictor?",
+    "back": "It means the model is constrained to treat frequency as claims divided by exposure exactly, rather than letting the data determine some other relationship between exposure and claim count."
+  },
+  {
+    "id": 369,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What happens to a Poisson log-link frequency model's fitted rate if exposure doubles, given the offset is correctly specified?",
+    "back": "The fitted rate per unit of exposure stays exactly the same; only the expected claim COUNT doubles, since the offset coefficient is fixed at 1."
+  },
+  {
+    "id": 370,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What business problem is a logit-link GLM typically used for in insurance, besides lapse?",
+    "back": "Modeling any bounded probability outcome, such as probability of claim occurrence, probability of fraud, or probability a quote converts to a bound policy."
+  },
+  {
+    "id": 371,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why can a coefficient with a plausible sign still be problematic in a GLM with correlated predictors?",
+    "back": "Multicollinearity can make the individual coefficient unstable, so its estimated size (and sometimes even sign) may change substantially with small changes in the data, even if the model's overall fit is fine."
+  },
+  {
+    "id": 372,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What is the general form of the linear predictor eta in a GLM with p predictors?",
+    "back": "eta = b0 + b1x1 + b2x2 + ... + bpxp."
+  },
+  {
+    "id": 373,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "Why is the log link considered numerically more stable than the inverse link for practical rating work?",
+    "back": "The log link's inverse transformation, exp(eta), is defined and positive for every real eta with no discontinuity, unlike the inverse link where mu = 1÷eta is undefined at eta = 0 and flips sign around it."
+  },
+  {
+    "id": 374,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "In model building, why is a single pass at fitting a GLM usually insufficient?",
+    "back": "Because predictor significance, interaction effects, and multicollinearity issues typically only become apparent after examining diagnostics from an initial fit, requiring refinement and re-fitting in cycles."
+  },
+  {
+    "id": 375,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Link Functions and Model Building",
+    "front": "What real-world constraint does the log link's positivity guarantee mirror for severity models?",
+    "back": "A claim severity dollar amount can never be negative or zero, so exp(eta) being strictly positive matches that constraint just as it does for frequency."
+  },
+  {
+    "id": 376,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the deviance of a fitted GLM?",
+    "back": "Twice the difference between the log-likelihood of the saturated model and the log-likelihood of the fitted model: D = 2 × [logLik(saturated) - logLik(fitted)]. It measures how far the fitted model falls short of a perfect fit."
+  },
+  {
+    "id": 377,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the saturated model?",
+    "back": "The model with one parameter per observation, so its fitted values equal the observed values exactly. It represents the best possible fit achievable given the assumed distribution and is the benchmark deviance is measured against."
+  },
+  {
+    "id": 378,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "How does deviance relate to residual sum of squares (RSS) in ordinary regression?",
+    "back": "For a Gaussian GLM with identity link, deviance reduces exactly to RSS. Deviance is described as a generalization of RSS to the broader exponential family (Poisson, gamma, binomial, etc)."
+  },
+  {
+    "id": 379,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the closed-form deviance formula for a Poisson GLM?",
+    "back": "D = 2 × sum over i of [y_i × ln(y_i ÷ mu_i) - (y_i - mu_i)], with y_i × ln(y_i ÷ mu_i) taken as 0 when y_i = 0."
+  },
+  {
+    "id": 380,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "When is a deviance-based chi-square test valid for comparing two GLMs?",
+    "back": "Only when the two models are NESTED, meaning one is a special case of the other obtained by setting a subset of the larger model's coefficients to zero."
+  },
+  {
+    "id": 381,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "For nested Model 0 (p0 parameters) and Model 1 (p1 parameters, p1 > p0), what is the distribution of Delta D = D(Model 0) - D(Model 1) under the null hypothesis?",
+    "back": "Approximately chi-square with p1 - p0 degrees of freedom. This is the likelihood ratio test (LRT) for nested GLMs."
+  },
+  {
+    "id": 382,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "In the deviance-based likelihood ratio test, what does it mean if Delta D exceeds the chi-square critical value?",
+    "back": "Reject the null hypothesis: the additional parameters in the larger model improve the fit by more than chance alone would predict, so the larger model is preferred."
+  },
+  {
+    "id": 383,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Can the deviance-based chi-square test compare two non-nested models, such as one using territory and one using population density?",
+    "back": "No. Non-nested models cannot be compared with the deviance chi-square test. Use AIC or BIC instead."
+  },
+  {
+    "id": 384,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the formula for the Akaike Information Criterion (AIC)?",
+    "back": "AIC = -2 × logLik + 2 × k, where logLik is the maximized log-likelihood and k is the number of estimated parameters."
+  },
+  {
+    "id": 385,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the formula for the Bayesian Information Criterion (BIC)?",
+    "back": "BIC = -2 × logLik + k × ln(n), where k is the number of parameters and n is the number of observations."
+  },
+  {
+    "id": 386,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "When comparing candidate models with AIC or BIC, is a lower or higher value preferred?",
+    "back": "Lower is better for both AIC and BIC. The preferred model is the one with the smallest AIC (or smallest BIC)."
+  },
+  {
+    "id": 387,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the key difference between the AIC penalty and the BIC penalty?",
+    "back": "AIC penalizes each parameter by a constant 2 regardless of sample size. BIC penalizes each parameter by ln(n), which grows with the number of observations."
+  },
+  {
+    "id": 388,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "For what sample sizes does BIC penalize complexity more heavily than AIC?",
+    "back": "Whenever ln(n) exceeds 2, which happens once n is roughly larger than about 7 or 8 observations. The gap grows as n grows."
+  },
+  {
+    "id": 389,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Does BIC tend to favor simpler or more complex models compared to AIC, especially in large insurance datasets?",
+    "back": "BIC tends to favor simpler, more parsimonious models than AIC, especially as sample size n grows large, since its penalty term ln(n) increases with n while AIC's penalty stays fixed at 2 per parameter."
+  },
+  {
+    "id": 390,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Can AIC and BIC compare non-nested models?",
+    "back": "Yes. Unlike the deviance chi-square test, AIC and BIC do not require nested models, as long as both models are fit to the identical response variable on the identical set of observations."
+  },
+  {
+    "id": 391,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Is a single AIC value meaningful in isolation?",
+    "back": "No. Only the relative value of AIC (or BIC) across a set of candidate models fit to the same data and response variable is meaningful."
+  },
+  {
+    "id": 392,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Model A has logLik = -1000 and 5 parameters. Model B has logLik = -990 and 9 parameters, fit on 200 observations. Which does AIC prefer?",
+    "back": "AIC(A) = 2000 + 10 = 2010. AIC(B) = 1980 + 18 = 1998. AIC prefers Model B (lower AIC, 1998 < 2010)."
+  },
+  {
+    "id": 393,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is forward selection?",
+    "back": "A stepwise procedure that starts with the simplest model (often just an intercept) and, at each step, adds whichever single candidate variable produces the largest improvement in the chosen criterion, stopping when no remaining variable meets the threshold for inclusion."
+  },
+  {
+    "id": 394,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is backward elimination?",
+    "back": "A stepwise procedure that starts with the full model containing every candidate variable and, at each step, removes whichever variable currently in the model contributes the least to the fit, stopping when every remaining variable meets the threshold for retention."
+  },
+  {
+    "id": 395,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What does stepwise selection (in the narrow sense) do that pure forward or backward selection does not?",
+    "back": "It alternates between forward and backward steps: after each addition it checks whether a previously added variable should now be dropped, and after each removal it checks whether a previously dropped variable should now be re-added."
+  },
+  {
+    "id": 396,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why are stepwise selection procedures considered unstable?",
+    "back": "Because each step's decision depends on which variables happen to already be in or out of the model, so small changes to the data sample can lead to very different final variable sets."
+  },
+  {
+    "id": 397,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why can forward selection or backward elimination get stuck in a suboptimal combination of variables?",
+    "back": "Forward selection can never remove a variable once added, and backward elimination can never re-add a variable once removed, so both can miss a combination that a full unconstrained search would have found."
+  },
+  {
+    "id": 398,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why do stepwise procedures tend to overstate the significance of the final selected variables?",
+    "back": "Because many candidate variables are tested and only the winners are kept, the reported significance levels and standard errors understate the true uncertainty, since the model was effectively chosen to look good on the data used to fit it."
+  },
+  {
+    "id": 399,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is a key limitation of stepwise procedures regarding interactions and nonlinear terms?",
+    "back": "They do not automatically consider interactions or nonlinear transformations unless those terms are explicitly included in the candidate pool from the start."
+  },
+  {
+    "id": 400,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the Pearson residual formula for observation i in a GLM?",
+    "back": "r_iᴾᵉᵃʳˢᵒⁿ = (y_i - mu_i) ÷ √(V(mu_i)), where mu_i is the fitted mean and V(mu_i) is the variance function of the assumed distribution."
+  },
+  {
+    "id": 401,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why is the raw residual (y_i - mu_i) divided by √(V(mu_i)) to form the Pearson residual?",
+    "back": "To standardize it so that, under a correctly specified model, Pearson residuals have roughly constant variance across observations, unlike raw residuals whose spread grows with mu_i under Poisson or gamma variance."
+  },
+  {
+    "id": 402,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What property do deviance residuals satisfy in relation to total deviance?",
+    "back": "The sum of the squared deviance residuals across all observations equals the total deviance of the model: sum over i of (r_iᵈᵉᵛⁱᵃⁿᶜᵉ)² = D."
+  },
+  {
+    "id": 403,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why are deviance residuals generally preferred over Pearson residuals for diagnostic plots?",
+    "back": "Their distribution tends to be closer to symmetric and closer to standard normal under a correctly specified model, making visual patterns easier to interpret."
+  },
+  {
+    "id": 404,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What should a residual plot look like under a correctly specified GLM?",
+    "back": "No systematic pattern: residuals scattered randomly around zero with roughly constant spread when plotted against fitted values or against each predictor."
+  },
+  {
+    "id": 405,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What does a funnel shape in a residual-versus-fitted-values plot suggest?",
+    "back": "That the assumed variance function is wrong, a strong signal to reconsider the distributional assumption or add a dispersion parameter."
+  },
+  {
+    "id": 406,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What does a curved or systematic trend in a residual-versus-predictor plot suggest?",
+    "back": "That the linear predictor is misspecified for that variable, for example that a continuous variable needs a nonlinear transformation or should be binned rather than entered linearly."
+  },
+  {
+    "id": 407,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the variance property that defines the Poisson distribution, and why does it matter for GLMs?",
+    "back": "Var(Y) = E(Y) = mu, meaning variance equals the mean. Insurance claim count data frequently violate this, showing variance exceeding the mean, which is called overdispersion."
+  },
+  {
+    "id": 408,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Name two common causes of overdispersion in Poisson claim count models.",
+    "back": "Unobserved heterogeneity among policyholders (similar observed rating variables but genuinely different underlying claim propensities), and contagion effects (one claim event makes a subsequent claim more likely, violating independence)."
+  },
+  {
+    "id": 409,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "How is the dispersion estimate phi-hat computed to detect overdispersion?",
+    "back": "phi-hat = Deviance ÷ (n - k), where n is the number of observations and k is the number of estimated parameters. Under a correctly specified Poisson model this should be close to 1."
+  },
+  {
+    "id": 410,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What does a dispersion estimate phi-hat noticeably greater than 1 indicate?",
+    "back": "That the data show more variability than a plain Poisson model allows for (overdispersion); a common rule of thumb flags roughly 1.5 to 2 or higher as material, though there is no universal cutoff."
+  },
+  {
+    "id": 411,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the quasi-Poisson approach to handling overdispersion?",
+    "back": "Keep the Poisson mean structure and coefficient point estimates unchanged, but inflate the standard errors of the coefficients using the estimated dispersion parameter phi-hat, correcting inference without changing the fitted means."
+  },
+  {
+    "id": 412,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the variance function of the negative binomial distribution, and how does it relate to the Poisson?",
+    "back": "V(mu) = mu + alpha × mu² for dispersion parameter alpha > 0. As alpha approaches 0, the negative binomial approaches the Poisson. It allows variance to exceed the mean directly."
+  },
+  {
+    "id": 413,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why is negative binomial regression generally considered a more rigorous fix for overdispersion than quasi-Poisson?",
+    "back": "Because alpha is estimated jointly with the mean-structure coefficients, so the negative binomial model can produce different fitted coefficients (not just different standard errors), modeling the extra variability explicitly."
+  },
+  {
+    "id": 414,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the practical risk of ignoring material overdispersion in ratemaking?",
+    "back": "The actuary understates the true uncertainty in the fitted coefficients, which can make unimportant rating variables appear artificially statistically significant."
+  },
+  {
+    "id": 415,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why do AIC, BIC, and deviance alone fail to detect overfitting?",
+    "back": "They evaluate how well a model fits the same data used to estimate its parameters, so an arbitrarily complex model can always be made to fit the training data better, even by fitting random noise rather than a genuine pattern."
+  },
+  {
+    "id": 416,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is overfitting?",
+    "back": "When a model fits its training data very well but performs worse than a simpler model on new, unseen data, because it captured noise specific to the training sample rather than the true underlying pattern."
+  },
+  {
+    "id": 417,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is a single holdout (train÷test) split in cross-validation?",
+    "back": "Randomly dividing the data into a training set (commonly 70 to 80 percent) used to fit the model, and a test set (the remainder) used only to evaluate predictive accuracy after fitting is complete."
+  },
+  {
+    "id": 418,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is k-fold cross-validation?",
+    "back": "The data is divided into k roughly equal folds (commonly k = 5 or 10). The model is fit k times, each time leaving out one fold as the test set, and the k out-of-sample performance measures are averaged."
+  },
+  {
+    "id": 419,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why is k-fold cross-validation generally preferred over a single holdout split for a limited dataset?",
+    "back": "It makes more efficient use of the data, since every observation is eventually used for testing exactly once, while still ensuring each test observation was excluded from the corresponding training run."
+  },
+  {
+    "id": 420,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "How do AIC and BIC relate conceptually to cross-validation?",
+    "back": "AIC and BIC are attempts to approximate what a full cross-validation exercise would show, using only the training data and a mathematical penalty term, rather than actually holding out data and re-fitting."
+  },
+  {
+    "id": 421,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "How is a lift chart constructed?",
+    "back": "Policies are scored with the fitted model, sorted from lowest to highest predicted risk, and divided into ten deciles. For each decile, the average predicted loss ratio and the average actual loss ratio are computed and plotted against decile number."
+  },
+  {
+    "id": 422,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What does a monotonically increasing actual loss ratio line across deciles in a lift chart indicate?",
+    "back": "That the model is successfully rank-ordering risk: policies predicted to be worse risks did in fact experience worse actual loss ratios."
+  },
+  {
+    "id": 423,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "In a lift chart, what does it mean if the actual and predicted loss ratio lines track closely within each decile?",
+    "back": "That the model's predicted levels, not just its rank ordering, are well calibrated."
+  },
+  {
+    "id": 424,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What does a flat or non-monotonic actual loss ratio line in a lift chart indicate?",
+    "back": "That the model has little or no discriminatory power, meaning it is not successfully separating good risks from bad risks even if its overall average prediction is accurate."
+  },
+  {
+    "id": 425,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the Lorenz curve used to build the Gini index?",
+    "back": "Policies are sorted from lowest to highest predicted risk, and the curve plots the cumulative proportion of total actual losses against the cumulative proportion of policies through the sorted order."
+  },
+  {
+    "id": 426,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Where does the Lorenz curve fall if a model has zero discriminatory power?",
+    "back": "Along the 45-degree line of equality, since the bottom x percent of policies by predicted risk would account for exactly x percent of actual losses."
+  },
+  {
+    "id": 427,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "How does the Lorenz curve of a model with strong discriminatory power behave?",
+    "back": "It bows well below the line of equality, since the lowest-predicted-risk policies account for a disproportionately small share of actual losses and the highest-predicted-risk policies for a disproportionately large share."
+  },
+  {
+    "id": 428,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "How is the Gini index computed from the Lorenz curve?",
+    "back": "As twice the area between the line of equality and the Lorenz curve."
+  },
+  {
+    "id": 429,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What range does the Gini index take, and what does each end mean?",
+    "back": "It ranges from 0 (no discriminatory power beyond random ordering) up toward 1 (very strong discriminatory power; exactly 1 would be perfect separation, not seen with real insurance data)."
+  },
+  {
+    "id": 430,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Can the Gini index compare models built on entirely different sets of predictor variables?",
+    "back": "Yes, much like AIC and BIC allow comparison of non-nested models, the Gini index provides a common scale for comparing rank-ordering ability across models with different predictors."
+  },
+  {
+    "id": 431,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What does the Gini index fail to tell you about a model, unlike deviance, AIC, or BIC?",
+    "back": "It says nothing about the calibration or absolute accuracy of the predicted values, only about how well the model orders risks relative to one another."
+  },
+  {
+    "id": 432,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why should actuaries examine the lift chart and Gini index together with likelihood-based diagnostics rather than relying on one tool alone?",
+    "back": "Because the lift chart and Gini index measure discrimination (rank ordering) while deviance, AIC, and BIC measure fit and calibration; no single tool captures both aspects of model quality."
+  },
+  {
+    "id": 433,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "A candidate model has deviance 640 on 200 - 8 = 192 degrees of freedom. Is there evidence of overdispersion?",
+    "back": "phi-hat = 640 ÷ 192 = 3.33, well above 1, indicating material overdispersion; the actuary should consider a quasi-Poisson adjustment or a negative binomial model."
+  },
+  {
+    "id": 434,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Two nested Poisson models are compared: Delta D = 15.2 with 2 additional parameters. Is the improvement significant at the 5% level (chi-square critical value with 2 df is 5.99)?",
+    "back": "Yes. 15.2 > 5.99, so the null hypothesis is rejected and the larger model's additional parameters produce a statistically significant improvement in fit."
+  },
+  {
+    "id": 435,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "Why can AIC and BIC disagree on which of two models is better, and when does this become more likely?",
+    "back": "They apply different complexity penalties (2 per parameter for AIC versus ln(n) per parameter for BIC). Disagreement becomes more likely as sample size n grows, since BIC's penalty grows with ln(n) while AIC's stays fixed."
+  },
+  {
+    "id": 436,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the practical purpose of validating a model on held-out data before it is used for insurance ratemaking?",
+    "back": "To confirm the model's predictive accuracy and discriminatory power generalize to new policies rather than reflecting patterns specific to the training sample, guarding against implementing an overfit model."
+  },
+  {
+    "id": 437,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "In a lift chart, why is it important that policies are sorted into deciles using a held-out validation sample rather than the training sample?",
+    "back": "Because in-sample lift and calibration can look artificially strong for an overfit model, so evaluating on held-out data gives a more honest picture of the model's true discriminatory power."
+  },
+  {
+    "id": 438,
+    "domain": "generalized_linear_models",
+    "chapter": "GLM Model Selection and Diagnostics",
+    "front": "What is the essential tradeoff that both AIC and BIC are designed to balance?",
+    "back": "Goodness of fit (captured by -2 × logLik, which decreases as fit improves) against model complexity (captured by a penalty term that grows with the number of parameters k), preventing selection of an overly complex model that merely fits noise."
+  },
+  {
+    "id": 439,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is the frequency-severity approach to ratemaking?",
+    "back": "Fit two separate GLMs, one for claim frequency and one for claim severity, then multiply the fitted frequency by the fitted severity to get the fitted pure premium for each risk profile."
+  },
+  {
+    "id": 440,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is the formula for pure premium in terms of frequency and severity?",
+    "back": "Pure Premium = Frequency x Severity, where frequency is expected claim count per exposure and severity is expected dollar amount per claim."
+  },
+  {
+    "id": 441,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Which distribution and link are standard for modeling claim frequency?",
+    "back": "A Poisson (or negative binomial÷quasi-Poisson if overdispersed) GLM with a log link."
+  },
+  {
+    "id": 442,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why is an offset used in a frequency GLM?",
+    "back": "The log of exposure is included as an offset (coefficient fixed at 1.0) so the model predicts a claim rate per unit of exposure rather than a raw claim count."
+  },
+  {
+    "id": 443,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Which distribution and link are standard for modeling claim severity?",
+    "back": "A gamma GLM with a log link, fit only on records that had a claim."
+  },
+  {
+    "id": 444,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why is the gamma distribution a natural fit for severity data?",
+    "back": "Its variance grows with the square of the mean, matching claim size data where large claims are rare but highly variable and small claims cluster tightly."
+  },
+  {
+    "id": 445,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Does the severity GLM use an exposure offset?",
+    "back": "No. Severity is already a per-claim quantity, so no offset is needed (unlike the frequency GLM)."
+  },
+  {
+    "id": 446,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is the Tweedie distribution used for in ratemaking?",
+    "back": "It models pure premium directly in a single GLM. It is a compound Poisson-gamma distribution: a random Poisson number of claims each with gamma severity, plus a point mass at zero."
+  },
+  {
+    "id": 447,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What does the Tweedie power parameter p represent, and what range does it take for pure premium modeling?",
+    "back": "It controls the variance function shape. p=1 recovers the Poisson, p=2 recovers the gamma, and values strictly between 1 and 2 blend the two for pure premium modeling."
+  },
+  {
+    "id": 448,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "When can the frequency-severity approach and the Tweedie approach diverge meaningfully?",
+    "back": "When a rating variable pushes frequency and severity in opposite directions (for example, younger drivers with higher frequency but lower average severity), a single Tweedie model can mask that offsetting pattern while the two-model approach preserves it."
+  },
+  {
+    "id": 449,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is one practical drawback of the frequency-severity approach compared to Tweedie?",
+    "back": "The severity model's sample size is much smaller than the frequency model's, since severity data exists only for records that had a claim; it also requires fitting and maintaining two models instead of one."
+  },
+  {
+    "id": 450,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why does a log-link GLM naturally produce a multiplicative rating structure?",
+    "back": "Exponentiating a linear predictor that is a sum of coefficients turns it into a product of exponentiated terms, so the fitted value equals the base rate times a series of multiplicative relativities."
+  },
+  {
+    "id": 451,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What does exp(beta_0) represent in a log-link rating GLM?",
+    "back": "The base rate: the fitted value for a risk that sits in the base level of every rating variable."
+  },
+  {
+    "id": 452,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What does exp(beta) represent for a categorical rating variable's coefficient?",
+    "back": "The multiplicative rating relativity for that category relative to the base level. Greater than 1.0 increases the rate; less than 1.0 decreases it."
+  },
+  {
+    "id": 453,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What relativity always applies to the base level of a rating variable, and why?",
+    "back": "A relativity of 1.00, because the base level's dummy variable is dropped from the model and its implicit coefficient is 0, and exp(0) = 1."
+  },
+  {
+    "id": 454,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "How do actuaries typically choose the base level for a rating variable?",
+    "back": "They choose the most common or typical category (largest exposure), because it produces a more stable intercept estimate and makes relativities easier for underwriters and regulators to interpret."
+  },
+  {
+    "id": 455,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "A frequency GLM has intercept beta_0 = -2.30. What is the base rate?",
+    "back": "exp(-2.30) = 0.1003 claims per exposure."
+  },
+  {
+    "id": 456,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "A territory coefficient is beta_T = 0.2400. What is the relativity and what does it mean?",
+    "back": "exp(0.2400) = 1.271. That territory is rated 27.1% higher than the base territory."
+  },
+  {
+    "id": 457,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "A vehicle age coefficient is beta_V = -0.1050. What is the relativity and what does it mean?",
+    "back": "exp(-0.1050) = 0.900. That vehicle age band is rated 10.0% lower than the base age band."
+  },
+  {
+    "id": 458,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Given a base rate of 0.1003, a territory relativity of 1.271, and a vehicle age relativity of 0.900, what is the fitted frequency for that risk?",
+    "back": "0.1003 x 1.271 x 0.900 = 0.1147 claims per exposure."
+  },
+  {
+    "id": 459,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "If fitted frequency is 0.1147 and fitted severity is $4,800, what is the fitted pure premium?",
+    "back": "0.1147 x $4,800 = $550.56."
+  },
+  {
+    "id": 460,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "How many coefficients does a categorical rating variable with k levels contribute to a GLM?",
+    "back": "k-1 coefficients, since one level is held out as the base level."
+  },
+  {
+    "id": 461,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why is territory difficult to model as an ordinary unpenalized categorical variable?",
+    "back": "It often has hundreds of distinct levels (ZIP codes or territory codes), leading to thin cells, unstable coefficient estimates, and severe overfitting."
+  },
+  {
+    "id": 462,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is territorial clustering?",
+    "back": "Grouping raw geographic units into a manageable number of territories based on preliminary loss experience analysis (such as univariate relativities or a clustering algorithm) before feeding the groups into the GLM."
+  },
+  {
+    "id": 463,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is spatial smoothing in territory ratemaking?",
+    "back": "A technique such as a spatial random effect that borrows statistical strength from neighboring geographic areas, pulling a thinly populated territory's rate toward its neighbors rather than relying only on its own limited data."
+  },
+  {
+    "id": 464,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What should an actuary do with a sparse level of a classification variable that has too little exposure?",
+    "back": "Group it with a neighboring, similar level before final model fitting, rather than leave it to produce an unstable, statistically insignificant relativity."
+  },
+  {
+    "id": 465,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is the tradeoff between treating a numeric rating variable as smooth÷continuous versus banding it into a categorical variable?",
+    "back": "Banding is simpler to implement and communicate but sacrifices statistical efficiency and can create artificial rate discontinuities, while a smooth curve is more efficient but harder to administer."
+  },
+  {
+    "id": 466,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is a common compromise for choosing band boundaries for a continuous rating variable?",
+    "back": "Fit the variable with a smooth curve first, inspect its shape, then choose band boundaries that approximate the smooth curve while keeping the final rating table administratively simple."
+  },
+  {
+    "id": 467,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "On what scale is a GLM coefficient reported in a typical coefficient table?",
+    "back": "On the link scale, which for a log-link model means the log scale, not the original (dollar or count) scale."
+  },
+  {
+    "id": 468,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What does the standard error of a GLM coefficient measure?",
+    "back": "How precisely the coefficient has been estimated. It shrinks with more exposure in the relevant category and grows when exposure is thin or the response is highly variable."
+  },
+  {
+    "id": 469,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is the common rule of thumb for statistical significance of a GLM coefficient at roughly the 95% confidence level?",
+    "back": "An absolute z-statistic (coefficient divided by its standard error) exceeding about 1.96, equivalently a p-value below 0.05."
+  },
+  {
+    "id": 470,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is the formula for an approximate 95% confidence interval for a GLM coefficient beta?",
+    "back": "beta +÷- 1.96 x SE(beta)."
+  },
+  {
+    "id": 471,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "How do you convert a confidence interval for a coefficient into a confidence interval for the relativity?",
+    "back": "Exponentiate both endpoints: exp(beta - 1.96 x SE(beta)) to exp(beta + 1.96 x SE(beta))."
+  },
+  {
+    "id": 472,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "A severity coefficient is beta = 0.1823 with SE = 0.0410. What is the z-statistic?",
+    "back": "0.1823 ÷ 0.0410 = 4.45, well above the 1.96 threshold, so highly statistically significant."
+  },
+  {
+    "id": 473,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "For beta = 0.1823 and SE = 0.0410, what is the approximate 95% confidence interval for beta?",
+    "back": "0.1823 +÷- 1.96 x 0.0410 = 0.1823 +÷- 0.0804, or (0.1019, 0.2627)."
+  },
+  {
+    "id": 474,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "For the confidence interval (0.1019, 0.2627) on the log scale, what is the confidence interval for the relativity?",
+    "back": "exp(0.1019) = 1.107 to exp(0.2627) = 1.301, with a point estimate relativity of exp(0.1823) = 1.200."
+  },
+  {
+    "id": 475,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Can a coefficient be statistically significant but practically unimportant? How?",
+    "back": "Yes. In a very large dataset, a trivially small effect (for example, a relativity of 1.01) can be statistically distinguishable from 1.00 even though it has essentially no real-world pricing consequence."
+  },
+  {
+    "id": 476,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why might an actuary retain a rating variable that is not statistically significant in the current dataset?",
+    "back": "If it is a well-established rating factor supported by industry experience or prior studies, and the actuary judges the current sample is simply too thin to detect a known real effect."
+  },
+  {
+    "id": 477,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is the difference between statistical significance and practical (business) significance?",
+    "back": "Statistical significance means an effect is distinguishable from zero given the data's precision; practical significance means the effect is large enough in magnitude to matter for actual pricing decisions."
+  },
+  {
+    "id": 478,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is a holdout (out-of-sample) test set used for in ratemaking model validation?",
+    "back": "Data held out entirely from model fitting, used to measure the model's predictive accuracy on data it has never seen, to detect overfitting."
+  },
+  {
+    "id": 479,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What does it mean if a model performs well on training data but noticeably worse on test data?",
+    "back": "It is a strong signal of overfitting: the model captured noise specific to the training sample rather than a genuine underlying pattern."
+  },
+  {
+    "id": 480,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What are two common metrics used to measure predictive accuracy on holdout data?",
+    "back": "Deviance and the Gini index, computed on the held-out test set rather than the training data."
+  },
+  {
+    "id": 481,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is an actual-versus-expected (A÷E) comparison in ratemaking validation?",
+    "back": "For each level of each rating variable, comparing actual observed losses÷claim counts÷pure premium in holdout data against what the model predicted for that same group."
+  },
+  {
+    "id": 482,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What should A÷E ratios look like for a well-calibrated rating model?",
+    "back": "Close to 1.00 across essentially every level of every rating variable."
+  },
+  {
+    "id": 483,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What does a persistent, large A÷E deviation in one territory suggest?",
+    "back": "The model is missing an important interaction or nonlinearity, or the rating variable needs further refinement (additional banding, an interaction term, or spatial smoothing)."
+  },
+  {
+    "id": 484,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why is overfitting especially dangerous in a ratemaking context, beyond just poor statistical fit?",
+    "back": "An overfit rating plan misprices real policyholders, systematically overcharging some segments and undercharging others, eroding both profitability and competitiveness."
+  },
+  {
+    "id": 485,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why is a rating variable like territory especially prone to overfitting?",
+    "back": "It has many levels with thin exposure in some, so a handful of large claims randomly concentrated in one small territory can produce an extreme, unstable relativity unrelated to true underlying risk."
+  },
+  {
+    "id": 486,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is cross-validation used for in ratemaking model validation?",
+    "back": "Repeatedly splitting data into different training÷test partitions and averaging model performance across the splits, to detect instability in indicated relativities before a rating plan goes live."
+  },
+  {
+    "id": 487,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is credibility weighting used for once an unstable relativity is identified?",
+    "back": "Correcting the instability by weighting the raw indicated relativity toward a broader base rate, giving less weight to thin, noisy segments."
+  },
+  {
+    "id": 488,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why must a GLM-based rating plan usually be filed with a regulator before use?",
+    "back": "In most jurisdictions the plan must be approved by an insurance regulator, and the actuary must provide clear actuarial justification for every rating variable and relativity."
+  },
+  {
+    "id": 489,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What does actuarial justification for a rating variable generally require?",
+    "back": "Demonstrating statistically significant coefficients, stable relativities across cross-validation folds or time periods, sensible A÷E performance on holdout data, and a plausible connection to loss potential."
+  },
+  {
+    "id": 490,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Are regulators generally comfortable with a rating variable that has a purely statistical relationship to risk with no plausible causal or correlational story?",
+    "back": "No. Regulators are typically skeptical of such a variable, and the actuary should be prepared to explain in plain terms why it is expected to relate to risk."
+  },
+  {
+    "id": 491,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Name examples of variables commonly prohibited or restricted in insurance rating.",
+    "back": "Race, religion, national origin, and in many jurisdictions and lines, credit-based insurance scores, gender, or genetic information (the specific list varies by jurisdiction and line of business)."
+  },
+  {
+    "id": 492,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is a proxy variable risk in GLM ratemaking?",
+    "back": "A GLM can pick up statistically significant relationships with variables highly correlated with a prohibited characteristic even when that characteristic is never directly included in the model; actuaries must check for and exclude this indirect effect."
+  },
+  {
+    "id": 493,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Is statistical significance alone sufficient to satisfy a regulator reviewing a rate filing?",
+    "back": "No. The actuary must also show the resulting relativity is reasonable in magnitude, consistent with prior experience or industry benchmarks, and does not cause excessive rate disruption."
+  },
+  {
+    "id": 494,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What is rate disruption, and why do many jurisdictions cap it?",
+    "back": "A large swing in an individual policyholder's premium from a rating plan change. Many jurisdictions cap how much a single revision can move an individual's premium in one renewal cycle, for fairness and market-stability reasons."
+  },
+  {
+    "id": 495,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What two things must an actuary balance when translating raw GLM-indicated relativities into a final implementable rating plan?",
+    "back": "The pure statistical evidence from the model and regulatory constraints such as rate disruption caps and prohibited-variable rules."
+  },
+  {
+    "id": 496,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "In a log-link GLM, why is the combined pure premium from frequency times severity automatically multiplicative in the rating factors?",
+    "back": "Because both fitted values are exponentials of linear predictors, so multiplying them multiplies the exponentiated coefficient terms together, preserving the multiplicative base-rate-times-relativities structure."
+  },
+  {
+    "id": 497,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What administrative advantage does a single Tweedie pure premium model have over the two-model frequency-severity approach?",
+    "back": "It requires fitting and maintaining only one model instead of two, and avoids the sample-size mismatch problem between frequency data (all exposures) and severity data (only claims)."
+  },
+  {
+    "id": 498,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why do actuaries examine frequency and severity separately even when a Tweedie model could combine them?",
+    "back": "Separate models give distinct insight for underwriting or claims purposes, such as which rating variables drive claim frequency versus which drive claim cost."
+  },
+  {
+    "id": 499,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "What happens to a rating variable's coefficient standard error as its exposure (sample size) in that category increases?",
+    "back": "The standard error shrinks, producing a more precisely estimated coefficient and relativity."
+  },
+  {
+    "id": 500,
+    "domain": "generalized_linear_models",
+    "chapter": "Applied GLMs for Ratemaking and Classification",
+    "front": "Why is it important to check A÷E performance broken out by rating variable rather than relying only on an aggregate fit statistic like overall deviance?",
+    "back": "An aggregate statistic can look good even while the model performs poorly for specific segments; breaking out A÷E by rating variable level reveals localized miscalibration that aggregate metrics can hide."
+  }
+]
